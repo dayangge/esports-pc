@@ -1,0 +1,371 @@
+@import "../../../../../../styles/utils";
+/* 赛果 */
+.match-wrapper{
+  height: 80vh;
+  overflow-x:hidden;
+  -ms-overflow-style:none;
+  overflow:-moz-scrollbars-none;
+  &::-webkit-scrollbar {
+    width: 0 !important
+  }
+}
+
+.match-list{
+  height: 80vh;
+  background: #273044;
+  .match-item{
+    color: #fff;
+    display: block;
+    position: relative;
+    background: #273044;
+    &:nth-child(even){
+      background: #514a61;
+    }
+    .match-box{
+      border: 1px solid #000;
+      border-bottom-color: transparent;
+      box-sizing: border-box;
+      height: 60px;
+      width: 980px;
+      .game-info{
+        margin-top: 5px;
+        display: inline-block;
+        color: #fff;
+        .game-logo{
+          width: 35px;
+          height: 35px;
+          vertical-align: middle;
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+        .live{
+          width: 35px;
+          height: 35px;
+          display: inline-block;
+          cursor: pointer;
+          .liveicon{
+            color: #6c7995;
+            font-size: 35px;
+            vertical-align: middle;
+            cursor: pointer;
+          }
+        }
+        .info{
+          margin-left: 5px;
+          display: inline-block;
+          font-size: 12px;
+          vertical-align: middle;
+          .time{
+            color: #ff7800;
+          }
+          .name{
+            display: block;
+            line-height: 16px;
+          }
+          .team{
+            width: 200px;
+            display: block;
+            line-height: 16px;
+          @include textOverflow
+          }
+        }
+
+      }
+      .vs{
+        top: 10px;
+        left: 255px;
+        width: 620px;
+        position: absolute;
+        text-align: center;
+        display: inline-block;
+        font-size: 14px;
+        .player{
+          width: 275px;
+          text-align: right;
+          display: inline-block;
+          .player-name{
+            width: 130px;
+            vertical-align: middle;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 16px;
+            font-weight: 400;
+            margin-right: 5px;
+          }
+          .player-img{
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+          }
+          .bet{
+            color: #fff;
+            background: #ff7800;
+            position: relative;
+            width: 52px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 5px;
+            text-align: center;
+            box-shadow: 0 0 0 #fff;
+            transition: all .2s;
+            &:hover{
+              box-shadow: 0 0 8px #fff,0 0 8px #fff,0 0 8px #fff,0 0 8px #fff,0 0 8px #fff,0 0 8px #fff;
+            }
+            .increase{
+              top: -22px;
+              left: 18px;
+              color: #FF1E1E;
+              font-size: 17px;
+              opacity: 0;
+              -webkit-animation: flash 1s linear 6 alternate;
+              animation: flash 1s linear 6 alternate;
+              position: absolute;
+            }
+            .reduce{
+              top: 22px;
+              left: 18px;
+              color: #27ff33;
+              font-size: 16px;
+              opacity: 0;
+              -webkit-animation: flash 1s linear 6 alternate;
+              animation: flash 1s linear 6 alternate;
+              position: absolute;
+            }
+            em{
+              position: relative;
+            }
+            .txt-vs{
+              width: 52px;
+              font-size: 18px;
+              vertical-align: middle;
+              display: inline-block;
+              font-weight: bold;
+            }
+          }
+
+        }
+      }
+      .match-options{
+        width: 120px;
+        position: absolute;
+        right: 0px;
+        top:0;
+        height: 60px;
+        .btn-guess{
+          top: 20px;
+          right: 70px;
+          width: 38px;
+          font-weight: 700;
+          border-radius: 5px;
+          transition: all .5s;
+          cursor: pointer;
+          background: transparent;
+          position: absolute;
+          height: 28px;
+          color: white;
+          border: 1px solid #fff;
+          font-size: 14px;
+          text-align: center;
+          line-height: 28px;
+        }
+        .live-icon{
+          top: 8px;
+          right: 8px;
+          width: 44px;
+          height: 44px;
+          position: absolute;
+          background-color: #e43342;
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+}
+
+.loadingBox{
+  width: 980px;
+  height: 50px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d2435;
+  .name{
+    display: inline-block;
+    width: 8em;
+    height: 1em;
+    line-height: 1;
+    text-align: left;
+    vertical-align: -.25em;
+    overflow: hidden;
+  @include dot
+  }
+}
+
+@keyframes dot{
+  33% { transform: translateY(-3em);}
+  66% { transform: translateY(-2em);}
+  99% { transform: translateY(-1em);}
+}
+.mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.2);
+  z-index: 1000;
+  .mask-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    .mask-content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      color: #1a2131;
+      .icon{
+        font-size: 40px;
+      }
+      .name{
+        font-size: 20px;
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+
+.bet{
+  background: linear-gradient(#232e3f, #171821);
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  overflow-y: auto;
+  .round{
+    .round-tab{
+      background-color: #1d2435;
+      color: #6c7995;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      padding: 8px 0 7px 90px;
+      .item{
+        padding: 5px 7px !important;
+        background-color: #313d57;
+        box-sizing: border-box;
+        margin-right: 3px;
+        font-size: 12px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        &.active{
+          color: #fff;
+          border: 1px solid #7a88a7;
+          background-color: #434f6b;
+        }
+      }
+
+    }
+  }
+  .list{
+    width: 100%;
+    .item{
+      color: #fff;
+      border: 1px solid #000;
+      border-bottom: none;
+      background-color: #273044;
+      justify-content: flex-start;
+      align-items: center;
+      flex: 1;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      &:nth-child(even){
+        background-color: #1a2131;
+      }
+      .table-item{
+        width: 100%;
+        table-layout: fixed;
+        .bet-name{
+          padding: 0 5px;
+          width: 190px;
+          font-size: 14px;
+          text-align: center;
+          box-sizing: border-box;
+        }
+        .pankou-row{
+          border-bottom: 1px solid #000;
+          bottom: 0;
+          font-size: 0;
+          position: relative;
+          background-color: #273044;
+          &:nth-child(even){
+            background-color: #1a2131;
+          }
+          &:last-child{
+            border-bottom: none;
+          }
+          span{
+            border-left: 1px solid #000;
+            padding: 10px 8px;
+            width: 50%;
+            min-height: 39px;
+            vertical-align: middle;
+            display: inline-block;
+            font-size: 14px;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+          }
+          .pankou-name{
+
+          }
+          .pankou-result{
+            font-weight: 700;
+            cursor: pointer;
+            &:hover{
+              background-color: #ff7800 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

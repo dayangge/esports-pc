@@ -1,0 +1,32 @@
+.notice-wrapper{
+  padding: 4px 0 5px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 4;
+  color: #fff;
+  background: #000;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  .box{
+    margin: 0 auto;
+    width: 1000px;
+  }
+  .nav-notice{
+    width: 120px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+ .marquee{
+   width: 855px;
+   position: relative;
+   vertical-align: middle;
+   white-space: nowrap;
+   .msg{
+     margin-right: 200px;
+     display: inline-block;
+     cursor: pointer;
+   }
+  }
+}

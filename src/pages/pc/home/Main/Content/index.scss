@@ -1,0 +1,88 @@
+.aside-right{
+  width: 980px;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  top: 100px;
+  bottom: 0;
+  left: 220px;
+  background-color: transparent;
+  @media screen and (max-width: 1200px){
+    top: 188px;
+    left: 0;
+  }
+  .match-container{
+    position: relative;
+    width: 980px!important;
+    min-height: 90%;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+    display: flex;
+    float: left;
+    color: white;
+    :global {
+      .ant-tabs{
+        color: white;
+        width: 100%;
+        overflow: visible !important;
+
+      }
+      .ant-tabs-bar{
+        position: relative;
+        overflow: visible !important;
+        border: none;
+        height: 45px;
+        margin: 0;
+        background-color: #9daaf0;
+      }
+      .ant-tabs-content{
+        position: relative;
+      }
+      .tabs-pane-wrap {
+        overflow-y: visible !important;
+      }
+      .tab-bar-item {
+        height: auto !important;
+        padding-bottom: 100px;
+      }
+      .ant-tabs-nav-container {
+        position: absolute;
+      }
+    }
+    .panel-content{
+      height: 100%;
+    }
+    .search-box{
+      margin: 4px 5px 0 0;
+      width: 200px;
+      height: 28px;
+      box-sizing: border-box;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #121212;
+      .countdown{
+        top: 3px;
+        right: 160px;
+        cursor: pointer;
+        position: absolute;
+        color: white;
+      }
+      .search-input{
+        float: right;
+        width: 155px;
+        height: 100%;
+        text-indent: 5px;
+        color: #fff;
+        background: transparent;
+      }
+    }
+  }
+}
+.mask{
+
+}
+
+
+

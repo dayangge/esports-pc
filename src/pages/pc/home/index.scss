@@ -1,0 +1,18 @@
+.container{
+  background-color: #e3bd73;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  .main-container{
+    padding-top: 50px;
+    height: 100%;
+    box-sizing: border-box;
+    .app-main{
+      height: 100%;
+      min-height: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

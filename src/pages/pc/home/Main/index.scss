@@ -1,0 +1,10 @@
+.main-panel{
+  margin: 0 auto;
+  width: 1200px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  @media screen and (max-width: 1200px){
+    width: 980px;
+  }
+}

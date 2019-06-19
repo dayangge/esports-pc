@@ -1,0 +1,98 @@
+.bet{
+  background: linear-gradient(#232e3f, #171821);
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  overflow-y: auto;
+  .round{
+    .round-tab{
+      background-color: #1d2435;
+      color: #6c7995;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      padding: 8px 0 7px 90px;
+      .item{
+        padding: 5px 7px !important;
+        background-color: #313d57;
+        box-sizing: border-box;
+        margin-right: 3px;
+        font-size: 12px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        &.active{
+          color: #fff;
+          border: 1px solid #7a88a7;
+          background-color: #434f6b;
+        }
+      }
+
+    }
+  }
+  .list{
+    width: 100%;
+    .item{
+      color: #fff;
+      border: 1px solid #000;
+      border-bottom: none;
+      background-color: #273044;
+      justify-content: flex-start;
+      align-items: center;
+      flex: 1;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      &:nth-child(even){
+        background-color: #1a2131;
+      }
+      .table-item{
+        width: 100%;
+        table-layout: fixed;
+        .bet-name{
+          padding: 0 5px;
+          width: 190px;
+          font-size: 14px;
+          text-align: center;
+          box-sizing: border-box;
+        }
+        .pankou-row{
+          border-bottom: 1px solid #000;
+          bottom: 0;
+          font-size: 0;
+          position: relative;
+          background-color: #273044;
+          &:nth-child(even){
+            background-color: #1a2131;
+          }
+          &:last-child{
+            border-bottom: none;
+          }
+          span{
+            border-left: 1px solid #000;
+            padding: 10px 8px;
+            width: 50%;
+            min-height: 39px;
+            vertical-align: middle;
+            display: inline-block;
+            font-size: 14px;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+          }
+          .pankou-name{
+
+          }
+          .pankou-result{
+            font-weight: 700;
+            cursor: pointer;
+            &:hover{
+             background-color: #ff7800 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

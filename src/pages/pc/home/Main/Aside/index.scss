@@ -1,0 +1,109 @@
+.asize-scroll-wrapper{
+  float: left;
+  overflow: hidden;
+  width: 210px;
+  height: 80%;
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  background: #273044;
+  @media (min-width: 0px)and (max-width: 1200px){
+    display: none;
+  }
+  .aside-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow:-moz-scrollbars-none;
+    -ms-overflow-style:none;
+    &::-webkit-scrollbar {
+      width: 0 !important
+    }
+    .category-list{
+      width: 100%;
+      cursor: pointer;
+      position: relative;
+      .category-item{
+        color: #6c7995;
+        border-bottom: 1px solid #121212;
+        background: #273044;
+        padding: 7px 5px 8px 15px;
+        position: relative;
+        width: 100%;
+        font-size: 14px;
+        transition: all .25s;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        &:nth-child(even){
+          background-color: #272648;
+        }
+        &:hover{
+          background: #ff7800 !important;
+          color: #fff;
+        }
+        &.active{
+          background: #ff7800 !important;
+          color: #fff;
+          .icon-arrow{
+            display: block !important;
+          }
+        }
+        .all-game{
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          vertical-align: middle;
+          text-align: center;
+          display: inline-block;
+          background: #000;
+          color: #fff;
+          font-weight: 700;
+        }
+        .game-logo{
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          vertical-align: middle;
+          text-align: center;
+          display: inline-block;
+          background: #000;
+          color: #fff;
+          font-weight: 700;
+        }
+        .name{
+          flex: 1;
+          text-indent: 5px;
+          vertical-align: middle;
+          display: inline-block;
+        }
+        .num{
+          margin-top: 3px;
+          width: 60px;
+          text-align: center;
+          vertical-align: middle;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .icon-arrow{
+            display: none;
+            margin-top: 2px;
+            font-weight: 700;
+            visibility: visible;
+            margin-right: 10px;
+          }
+        }
+      }
+      .active{
+        background: #313d57 !important;
+      }
+    }
+  }
+}
