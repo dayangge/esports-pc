@@ -338,6 +338,114 @@ td{
   transition: all 500ms;
 }
 
-/*正在加载的后面的点点动画*/
+/*覆盖antd的表格样式*/
+.ant-table{
+  font-size: 12px;
+}
+.ant-modal-header{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  text-align: center;
+  background: #ff7f27;
+  padding: 0;
+}
+.ant-modal-title {
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+}
 
+.ant-modal-close-x{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+}
+.ant-table-thead > tr > th{
+  color: white;
+  background-color: #313d57;
+  border: none;
+  align-self: center;
+  text-align:center;
+}
+.ant-table-tbody > tr > td{
+  border: none;
+  align-self: center;
+  color: white;
+  text-align:center;
+}
+.ant-table-tbody > tr:nth-child(even) > td{
+  background-color: #313d57;
 
+}
+.ant-table-tbody > tr:nth-child(even) > td{
+  background-color: #273044;
+}
+.ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td,
+.ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td,
+.ant-table-thead > tr:hover:not(.ant-table-expanded-row) > td,
+.ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
+  background: #ff7f27;
+}
+.ant-spin-nested-loading > div > .ant-spin{
+  background-color: transparent;
+}
+
+.ant-spin-blur {
+  clear: both;
+  overflow: hidden;
+  opacity: 0.5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+.ant-spin-blur::after {
+  opacity: 0;
+  pointer-events: auto;
+}
+.ant-spin-tip {
+  color: rgba(0, 0, 0, 0.45);
+}
+.ant-table-placeholder{
+  background-color: transparent;
+  border: none;
+}
+.ant-empty-image img {
+  display: none;
+}
+.ant-empty-description{
+  color: white;
+}
+
+.ant-form label{
+  font-size: 12px;
+  color: white;
+}
+.ant-input{
+  width: 110px;
+  height: 25px;
+  color: #fff;
+  font-size: 12px;
+  background: hsla(0,0%,100%,.2);
+  border-radius: 4px;
+  box-shadow: none;
+  outline: none;
+  border: 1px;
+}
+.ant-calendar-picker-input{
+  width: 200px;
+}
+
+.ant-table-pagination.ant-pagination{
+  margin: 10px auto;
+  float: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

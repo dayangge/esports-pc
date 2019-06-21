@@ -42,8 +42,11 @@ class Content extends PureComponent {
   fetchMatchList = (key) => {
     const { dispatch,gameAndMatchRequestParams } = this.props;
     const { gameID } =  gameAndMatchRequestParams;
-    console.log(key);
     if(key === '4'){
+      dispatch({
+        type: 'gameAndMatchRequestParams/modifyMatchType',
+        payload: { matchType: key }
+      });
       dispatch({
         type: 'matchResult/fetchMatchResult',
         payload: { gameID }

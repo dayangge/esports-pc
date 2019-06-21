@@ -24,14 +24,6 @@ export default {
       hardSource: false,
     }],
   ],
-  alias:{
-    components:path.resolve(__dirname,'src/components'),
-    utils:path.resolve(__dirname,'src/utils'),
-    services:path.resolve(__dirname,'src/services'),
-    models:path.resolve(__dirname,'src/models'),
-    images:path.resolve(__dirname,'src/assets'),
-    styles:path.resolve(__dirname,'src/styles')
-  },
   // 路由配置
   routes: PCPageRoutes,
   history: 'hash',

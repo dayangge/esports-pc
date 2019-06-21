@@ -12,7 +12,7 @@ class Mask extends PureComponent {
           width: '100%',
           height: '100%',
           backgroundColor: bg,
-          zIndex: 998
+          zIndex: 1
         }}
       >
         <div

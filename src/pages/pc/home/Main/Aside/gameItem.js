@@ -17,18 +17,21 @@ class Aside extends PureComponent {
   fetchGameList = (id) => {
     const { dispatch,gameAndMatchRequestParams } = this.props;
     const { matchType} =  gameAndMatchRequestParams;
-    dispatch({
-      type: 'gameAndMatchRequestParams/modifyGameType',
-      payload: {gameID:id}
-    });
-    dispatch({
-      type: 'gameList/fetchGameList',
-      payload: {gameID:id,matchType}
-    });
-    dispatch({
-      type: 'matchList/fetchMatchList',
-      payload: {gameID:id,matchType}
-    });
+    if(matchType === '4'){
+      dispatch({
+        type: 'matchResult/fetchMatchResult',
+        payload: { gameID:id }
+      });
+    }else {
+      dispatch({
+        type: 'gameAndMatchRequestParams/modifyGameType',
+        payload: { gameID: id }
+      });
+      dispatch({
+        type: 'matchList/fetchMatchList',
+        payload: { gameID: id, matchType }
+      });
+    }
   };
 
   render() {

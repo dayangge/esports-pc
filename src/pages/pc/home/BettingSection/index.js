@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
-import Link from 'umi/link';
 import {Icon} from 'antd'
+import { connect } from 'dva';
 import styles from './index.scss';
-import Slide from '@/components/slideAnimate'
-
-
-export default class TopHeader extends PureComponent {
+@connect(({ showGameLog}) => ({
+  showGameLog,
+}))
+class BettingSection extends PureComponent {
   state = {
-    maxWidth: undefined,
+    isTabs: 'bet',
     slideIn: false
   };
 
@@ -18,56 +18,50 @@ export default class TopHeader extends PureComponent {
     })
   };
 
+  toggleTabs= (tab) => {
+    this.setState({
+      isTabs: tab
+    })
+  };
+
+  showGameLog = () => {
+    const { dispatch } = this.props;
+    dispatch({
+      type:'showGameLog/toggleGameLog',
+      payload: true
+    })
+  };
+
+
+
   render() {
-    const { slideIn } = this.state;
+    const { slideIn,isTabs } = this.state;
     return (
       <div className={styles.betting} style={slideIn ? { transform: 'translateX(0)'}:{transform: 'translateX(100%)'}}>
         <div className={styles.arrow} onClick={this.changeBetSectionPos}>
-          <Icon className={styles.iconfont} type="right" />
+         <Icon className={styles.iconfont} type="right" />
         </div>
         <div className={styles.header}>
           <span>竞猜单</span>
-          <Icon className={styles.iconfont} type="delete" />
+          {isTabs === 'bet'?<Icon className={styles.iconfont} type="delete" /> :
+            <div className={styles.more} onClick={this.showGameLog}>查看更多</div>
+          }
+
         </div>
         <div className={styles.container}>
-          <div className={styles['bet-box']}>
-            <div className={styles['bet-content']}>
-              <div className={styles['bet-list']}>
-                <div className={styles['bet-item']}>
-                  <div className={styles['bet-item-header']}>
-                    <span className={styles['item-title']}>
-                      [BO3]Dominus Esports VS Edward Gaming 比赛获胜
-                    </span>
-                  </div>
-                  <div className={styles['bet-item-content']}>
-                    <div className={styles.box}>
-                      <div className={styles['text-row']}>
-                        <span>EDG</span>
-                        <span>投注额</span>
-                        <span>收益</span>
-                      </div>
-                      <div className={styles['bet-box']}>
-                        <span className={styles.odds}>2.10</span>
-                        <span>x</span>
-                        <div className={styles['bet-input']}>
-                          <div className={styles.select}>
-                            <input className={styles['input-sel']}/>
-                          </div>
-                        </div>
-                        <div className={styles.result}>
-                          <span>=</span>
-                          <span className={styles.num}>￥21.03</span>
-                          <Icon className={styles.del} type="close-circle" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+        </div>
+        <div className={styles.bottom}>
+          <div
+            className={isTabs === 'bet'? `${styles['bet-tab']} ${styles.active}` : styles['bet-tab']}
+            onClick={() => this.toggleTabs('bet')}>投注单</div>
+          <div
+            className={isTabs === 'recent'? `${styles['recent-tab']} ${styles.active}` : styles['recent-tab']}
+            onClick={() => this.toggleTabs('recent')} >近期投注</div>
         </div>
       </div>
     );
   }
 }
+
+export default BettingSection

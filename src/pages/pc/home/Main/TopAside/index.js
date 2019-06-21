@@ -6,7 +6,6 @@ import MaskLoading from '../../../../../components/PCMask'
 
 class Aside extends PureComponent {
   state = {
-    maxWidth: undefined,
     pos: 0
   };
 

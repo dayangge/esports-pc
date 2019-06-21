@@ -19,14 +19,12 @@ class firstRound extends PureComponent {
     });
   };
 
-
   render() {
     const { isShowNum } = this.state;
     const {
       matchHandicapData,
       oddsList: { oddsList },
     } = this.props;
-    console.log(this.props);
     const { data: { Round }, list } = matchHandicapData;
     const { ids } = list;
     const handicapList= list.list;
