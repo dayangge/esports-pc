@@ -338,6 +338,70 @@ td{
   transition: all 500ms;
 }
 
+/*覆盖antd的Tabs-Nav样式*/
+.ant-tabs-top-bar{
+  width: 1200px;
+  left: -218px;
+  top: -74px;
+}
+.ant-tabs-nav .ant-tabs-tab-active {
+  color: #fff!important;;
+  font-weight: 500;
+  background: linear-gradient(to bottom,#3e3e6b,#414357)!important;
+}
+.ant-tabs-nav .ant-tabs-tab{
+  padding: 9px 26px;
+  margin: 0;
+}
+.ant-tabs-ink-bar{
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  height: 2px;
+  background-color: #f1af3a;
+  transform-origin: 0 0;
+}
+.ant-tabs{
+  color: white;
+  width: 100%;
+  overflow: visible !important;
+}
+.ant-tabs-bar{
+  position: relative;
+  overflow: visible !important;
+  border: none;
+  height: 38px;
+  margin: 0;
+  background:linear-gradient(to bottom, #1a1a20, #4b4d64);
+}
+.ant-tabs-content{
+  position: relative;
+  top: -40px;
+}
+.tabs-pane-wrap {
+  overflow-y: visible !important;
+}
+.tab-bar-item {
+  height: auto !important;
+  padding-bottom: 100px;
+}
+.ant-tabs-nav-container {
+  position: absolute;
+  font-size: 14px;
+  color: #c1c1c1;
+}
+
+
+@media (min-width: 0px)and (max-width: 1200px){
+  .ant-tabs-top-bar{
+    width: 980px;
+    left: 0;
+    top: -10px;
+  }
+}
+
 /*覆盖antd的表格样式*/
 .ant-table{
   font-size: 12px;
@@ -390,6 +454,12 @@ td{
 .ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
   background: #ff7f27;
 }
+.ant-table-thead > tr > th, .ant-table-tbody > tr > td{
+  padding: 12px;
+}
+
+
+/*覆盖antd表格loading以及没有数据的样式*/
 .ant-spin-nested-loading > div > .ant-spin{
   background-color: transparent;
 }

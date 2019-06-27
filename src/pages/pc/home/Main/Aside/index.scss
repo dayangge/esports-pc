@@ -4,10 +4,12 @@
   width: 210px;
   height: 80%;
   position: absolute;
-  top: 100px;
+  top: 138px;
   bottom: 0;
   left: 0;
   background: #273044;
+  z-index: 1000;
+  font-size: 20px;
   @media (min-width: 0px)and (max-width: 1200px){
     display: none;
   }
@@ -29,29 +31,30 @@
       cursor: pointer;
       position: relative;
       .category-item{
-        color: #6c7995;
+        box-sizing: border-box;
+        color: #a9a9a9;
         border-bottom: 1px solid #121212;
-        background: #273044;
-        padding: 7px 5px 8px 15px;
+        border-left: 1px solid #121212;
+        background: #1b1a20;
+        padding: 10px 8px 12px 18px;
         position: relative;
         width: 100%;
+        height: 40px;
         font-size: 14px;
         transition: all .25s;
-        box-sizing: border-box;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        &:nth-child(even){
-          background-color: #272648;
-        }
         &:hover{
-          background: #ff7800 !important;
-          color: #fff;
+          background: #4b4d64 !important;
+          color: #f6c873;
+          border-left: 2px solid #f00406;
         }
         &.active{
-          background: #ff7800 !important;
-          color: #fff;
+          background: #4b4d64  !important;
+          color: #f6c873;
+          border-left: 2px solid #f00406;
           .icon-arrow{
             display: block !important;
           }
@@ -83,22 +86,14 @@
           text-indent: 5px;
           vertical-align: middle;
           display: inline-block;
+          margin-left: 10px;
         }
         .num{
           margin-top: 3px;
           width: 60px;
           text-align: center;
           vertical-align: middle;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          .icon-arrow{
-            display: none;
-            margin-top: 2px;
-            font-weight: 700;
-            visibility: visible;
-            margin-right: 10px;
-          }
+          margin-left: 10px;
         }
       }
       .active{

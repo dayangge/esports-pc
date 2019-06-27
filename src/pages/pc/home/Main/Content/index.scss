@@ -1,9 +1,8 @@
 .aside-right{
-  width: 980px;
+  width: 984px;
   position: absolute;
   right: 0;
-  overflow: hidden;
-  top: 100px;
+  top: 140px;
   bottom: 0;
   left: 220px;
   background-color: transparent;
@@ -13,43 +12,13 @@
   }
   .match-container{
     position: relative;
-    width: 980px!important;
+    width: 100%;
     min-height: 90%;
     flex: 1;
     flex-direction: column;
-    overflow: hidden;
     display: flex;
     float: left;
     color: white;
-    :global {
-      .ant-tabs{
-        color: white;
-        width: 100%;
-        overflow: visible !important;
-
-      }
-      .ant-tabs-bar{
-        position: relative;
-        overflow: visible !important;
-        border: none;
-        height: 45px;
-        margin: 0;
-        background-color: #9daaf0;
-      }
-      .ant-tabs-content{
-        position: relative;
-      }
-      .tabs-pane-wrap {
-        overflow-y: visible !important;
-      }
-      .tab-bar-item {
-        height: auto !important;
-        padding-bottom: 100px;
-      }
-      .ant-tabs-nav-container {
-        position: absolute;
-      }
-    }
     .panel-content{
       height: 100%;
     }
@@ -59,7 +28,7 @@
       height: 28px;
       box-sizing: border-box;
       position: absolute;
-      top: 10px;
+      top: -10px;
       right: 10px;
       background-color: #121212;
       .countdown{

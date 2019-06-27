@@ -1,3 +1,4 @@
+@import "../../../../styles/utils";
 .betting{
   top: 100px;
   background-color: #2f3b55;
@@ -70,6 +71,235 @@
     overflow-anchor: none;
     -ms-overflow-style: none;
     touch-action: auto;
+    flex-direction: column;
+    display: flex;
+    font-size: 14px;
+    /*投注单列表样式*/
+    .bet-box{
+      width: 100%;
+      flex-direction: column;
+      display: flex;
+      padding: 6px;
+      color: white;
+      margin-top: 10px;
+      .bet-list{
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        .bet-item{
+          width: 100%;
+          flex-direction: column;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .bet-item-header{
+            width: 100%;
+            flex-direction: row;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            padding: 5px 2px;
+            margin-bottom: 2px;
+            .icon{
+              width:16px;
+              height: 16px;
+            }
+            .title{
+              flex:1;
+            }
+          }
+          .bet-item-content{
+            width: 100%;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .handicapInfo{
+              width: 100%;
+              flex-direction: row;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: #21293c;
+              padding: 5px 3px;
+              .handicap{
+                flex: 1;
+                padding-left: 10px;
+              }
+              .betMoney{
+                flex: 1;
+              }
+              .win{
+                flex: 1;
+              }
+            }
+            .winInfo{
+              width: 100%;
+              flex-direction: row;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              background-color: #1a2131;
+              padding: 5px 3px;
+              .odds{
+                width: 52px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 15px;
+                font-weight: 700;
+                text-align: center;
+                display: inline-block;
+                border-radius: 5px;
+                position: relative;
+                color: #fff;
+                background-color: #ff7800;
+              }
+              .odds-change{
+
+              }
+              .x{
+
+              }
+              .bet-select{
+                width: 107px;
+                height: 28px;
+                display: inline-block;
+                position: relative;
+                .bet-select-input{
+                  border: 1px solid #010203;
+                  background: #323d56;
+                  width: 100%;
+                  height: 100%;
+                  box-sizing: border-box;
+                  position: relative;
+                }
+              }
+              .equal{
+
+              }
+              .money{
+
+              }
+              .del{
+
+              }
+
+            }
+          }
+        }
+      }
+    }
+    /*投注单按钮样式*/
+    .bet-total{
+      margin: 10px 1px 1px;
+      width: 100%;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .calc{
+        width: 100%;
+        background-color: #192031;
+        margin-bottom: 1px;
+        padding: 14px 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        .left{
+          width: 50%;
+        }
+        .right{
+          width: 50%;
+        }
+      }
+      .button{
+        width: 100%;
+        background-color: #192031;
+        padding: 14px 0;
+        text-align: center;
+        .button-submit{
+          margin: 0 auto;
+          width: 260px;
+          height: 36px;
+          display: block;
+          border-radius: 3px;
+          color: #fff;
+          background: #ff7800;
+          cursor: pointer;
+        }
+        .warning{
+          margin-top: 10px;
+          display: block;
+          color: #c3c3c3;
+      }
+
+      }
+    }
+    /*近期投注样式*/
+    .recent-box{
+      width: 100%;
+      flex-direction: column;
+      display: flex;
+      padding: 0 8px;
+      color: white;
+      margin-top: 4px;
+      font-size: 13px;
+      .recent-list{
+        padding: 8px 12px;
+        width: 100%;
+        box-sizing: border-box;
+        flex-direction: column;
+        display: flex;
+        .recent-item{
+          width: 100%;
+          color: #fff;
+          margin-bottom: 8px;
+          flex-direction: column;
+          display: flex;
+          .header{
+            width: 100%;
+            background: #000;
+            padding: 0 8px;
+            height: 36px;
+            line-height: 36px;
+            font-size: 13px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            .title{
+              width: 70%;
+              @include textOverflow
+            }
+            .status{
+              width: 30%;
+            }
+          }
+          .content{
+            width: 100%;
+            color: #d7d7d7;
+            background: #192031;
+            margin-top: 1px;
+            padding: 8px;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            .handicap-info{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 4px 0;
+            }
+          }
+        }
+      }
+    }
   }
   .bottom{
     position: relative;

@@ -3,7 +3,6 @@ import { Icon } from 'antd';
 import { connect } from 'dva';
 import styles from './index.scss';
 
-
 @connect(({ gameList,matchList,gameAndMatchRequestParams, loading }) => ({
   gameList,
   matchList,
@@ -38,16 +37,16 @@ class Aside extends PureComponent {
     const { data,gameAndMatchRequestParams} = this.props;
     const { gameID} =  gameAndMatchRequestParams;
     return (
-      <li className={gameID === data.ID?(`${styles['category-item']} ${styles.active}`) : styles['category-item'] } key={data.ID} onClick={() => this.fetchGameList(data.ID)}>
+      <li className={gameID === data.id?(`${styles['category-item']} ${styles.active}`) : styles['category-item'] }
+          key={data.id} onClick={() => this.fetchGameList(data.id)}>
         <img alt=''
-             src={data.Cover}
+             src={data.logo}
              className={styles['game-logo']} />
         <span
-          className={styles.name}>{data.Name}
+          className={styles.name}>{data.name_cn}
         </span>
         <span className={styles.num}>
-          {data.Count}
-          <Icon className={styles['icon-arrow']} type="right" />
+          {data.match_count}
           </span>
       </li>
     );

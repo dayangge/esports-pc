@@ -6,15 +6,13 @@ import Aside from './Aside/index';
 import TopAside from './TopAside';
 import Content from './Content/index';
 
-@connect(({ gameList,gameAndMatchRequestParams, matchList, matchHandicap, updateOdds, loading }) => ({
+@connect(({ gameList,gameAndMatchRequestParams, matchList, updateOdds, loading }) => ({
   gameList,
   matchList,
-  matchHandicap,
   updateOdds,
   gameAndMatchRequestParams,
   gameLoading: loading.models.gameList,
   eventLoading: loading.models.matchList,
-  handicapLoading: loading.models.matchHandicap,
 }))
 class Main extends PureComponent {
   state = {
@@ -46,8 +44,6 @@ class Main extends PureComponent {
       type: 'oddsList/fetchOddsList',
     });
   };
-
-
 
   render() {
     const {

@@ -10,11 +10,12 @@ import React, { PureComponent } from 'react';
 import { TransitionGroup, CSSTransition,Transition } from "react-transition-group";
 
 
-class Fade extends    PureComponent {
+class Fade extends PureComponent {
 
   done =() => {
 
   };
+
   addaddEndListener = (node) => { //原生时间transition运动的事件
     node.addEventListener('transitionend', this.done, false);
   };
@@ -44,18 +45,18 @@ class Fade extends    PureComponent {
     const { in: inProp, } = this.props;
     const defaultStyle = {
       transition: `transform ${300}ms ease-in-out, opacity ${300}ms ease-in-out`,
-      transform: 'translateX(100px)',
-      opacity: '0'
+      transform: 'translateX(0)',
+      opacity: '1'
     };
 
     const transitionStyles = {
-      entering: { transform: 'translateY(10px)', opacity: '0'},
-      entered:  { transform: 'translateY(0px)', opacity: '1' },
-      exiting: {transform: 'translateY(0px)', opacity: '1'},
-      exited: {transform: 'translateY(0px)', opacity: '0'}
+      entering: { transform: 'translateX(100%)', opacity: '0'},
+      entered:  { transform: 'translateX(0px)', opacity: '1' },
+      exiting: {transform: 'translateX(100%)', opacity: '1'},
+      exited: {transform: 'translateX(0px)', opacity: '0'}
     };
     const duration = {
-      enter: 100,
+      enter: 200,
       exit: 200,
     };
     // 上面的都是基本参数，样式的转变以及时间的设定，具体的可以看官网文档
@@ -83,7 +84,7 @@ class Fade extends    PureComponent {
                 ...defaultStyle,
                 ...transitionStyles[state]
               }}>
-                {this.props.children}
+                { this.props.children }
               </div>
             )
           }

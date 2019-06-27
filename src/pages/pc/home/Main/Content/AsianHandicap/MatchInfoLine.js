@@ -6,18 +6,28 @@ import BetDetail from './BetDetail/index';
 import Fade from '../../../../../../components/fadeAninate';
 import moment from 'moment';
 
-@connect(({ showMatchHandicapInfo, matchHandicap,oddsList, loading }) => ({
+const bgColor = {
+  1: 'lol',
+  2: 'dota2',
+  3: 'csgo',
+  4: 'pubg',
+  5: 'ow',
+  6: 'gok',
+};
+
+@connect(({ showMatchHandicapInfo, matchHandicap,oddsList, loading, gameDB }) => ({
   showMatchHandicapInfo,
   matchHandicap,
   oddsList,
   loading: loading.models.matchHandicap,
+  gameDB,
 }))
 class MatchInfoLine extends PureComponent {
   state = {
     isShow: false
   };
 
-  showBetDetail = (index) => {
+  showBetDetail = (index,matchID) => {
     const { dispatch } = this.props;
     const { showMatchHandicapInfo:{isShowNum}} = this.props;
     if(isShowNum === index){
@@ -30,7 +40,7 @@ class MatchInfoLine extends PureComponent {
 
     dispatch({
       type: 'matchHandicap/fetchMatchHandicap',
-      payload: index
+      payload: {match_id:matchID}
     })
   };
 
@@ -40,160 +50,135 @@ class MatchInfoLine extends PureComponent {
       showMatchHandicapInfo: { isShowNum },
       matchHandicap: {matchHandicap},
       oddsList: {oddsList},
+      gameDB:{gameDB},
       loading
     } = this.props;
-    const handicapIds = data.Bet[0].Items.ids;
+    const { handicap_items } = data.main_handicap[0];
     return (
-      <li className={styles['match-item']}>
+      <li className={styles[`match-item-${bgColor[data.game_id]}`]} >
         <div className={styles['match-box']}>
           <div className={styles['match-box']}>
             <div className={styles['game-info']}>
-              <img
-                src={data.CateLogo}
-                className={styles['game-logo']}
-              />
               {
-                data.IsVideo ? (<a className={styles.live}>
-                  <Icon type="play-circle" className={styles.liveicon} />
+                gameDB[data.game_id] ?
+                <img
+                  src={gameDB[data.game_id].logo}
+                  className={styles['game-logo']}
+                />: ''
+              }
+
+              {
+                data.on_air ? (<a className={styles.live}>
+                  <Icon type="play-circle" className={styles.liveicon}/>
                 </a>) : ''
               }
+
               <div className={styles.info}>
                 <span className="time">
                   {
-                    moment(data.StartAt).format('YYYY-MM-DD')
+                    moment(data.match_time).format('YYYY-MM-DD')
                   }
                   <em className={styles.time}>
                     {
-                      moment(data.StartAt).format('HH:mm')
+                      moment(data.match_time).format('HH:mm')
                     }
                   </em>
                 </span>
                 <span
-                  className={styles.name}>{data.League}
+                  className={styles.name}>{data.event_name}
                 </span>
-                <span title={ data.Title } className={`${styles.team} txt-ellipsis`}>
-                  { data.Title }
+                <span title={data.match_name} className={`${styles.team} txt-ellipsis`}>
+                  {data.match_name}
                 </span>
               </div>
             </div>
-            {
-              handicapIds.length === 2 ? (
-                <div  className={styles.vs}>
-                  <div  className={styles.player} >
-                    <span title={data.Player[0].Name} className={styles['player-name']}>{data.Player[0].Name}</span>
-                      <img
-                        src={data.Player[0].Logo}
-                        className={styles['player-img']}
-                      />
-                      <div className={styles.bet} >
-                        {
-                          oddsList[handicapIds[0]] ? (
-                            oddsList[handicapIds[0]].Odds
-                          ) : ''
-                        }
-                        {
-                          oddsList[handicapIds[0]] && oddsList[handicapIds[0]].increase && oddsList[handicapIds[0]].increase === 1? (
-                            <span className={styles.increase}>
-                              <Icon type="caret-up" />
+          <div className={styles.vs} title={data.main_handicap.name}>
+              <div className={styles.player}>
+                <span title={data.host_player.name} className={styles['player-name']}>{data.host_player.name}</span>
+                <img
+                  src={data.host_player.logo}
+                  className={styles['player-img']}
+                />
+                <div className={styles.bet}>
+                  {
+                    oddsList[handicap_items[0].id] ? (
+                      oddsList[handicap_items[0].id].odds
+                    ) : ''
+                  }
+                  {
+                    oddsList[handicap_items[0].id] && oddsList[handicap_items[0].id].increase && oddsList[handicap_items[0].id].increase === 1 ? (
+                      <span className={styles.increase}>
+                              <Icon type="caret-up"/>
                             </span>
-                          ) : ''
-                        }
-                        {
-                          oddsList[handicapIds[0]] && oddsList[handicapIds[0]].increase && oddsList[handicapIds[0]].increase === -1? (
-                            <span className={styles.reduce}>
-                              <Icon type="caret-down" />
+                    ) : ''
+                  }
+                  {
+                    oddsList[handicap_items[0].id] && oddsList[handicap_items[0].id].increase && oddsList[handicap_items[0].id].increase === -1 ? (
+                      <span className={styles.reduce}>
+                              <Icon type="caret-down"/>
                             </span>
-                          ) : ''
-                        }
-                      </div>
-
-                  </div>
-                  <span  className={styles['txt-vs']}>VS</span>
-                  <div  className={styles.player} style={{textAlign: 'left',marginLeft:'5px'}}>
-                  <span className={styles.bet} >
+                    ) : ''
+                  }
+                </div>
+              </div>
+              <span className={styles['txt-vs']}>VS</span>
+              <div className={styles.player} style={{ textAlign: 'left', marginLeft: '5px' }}>
+                  <span className={styles.bet}>
                     {
-                      oddsList[handicapIds[1]] ? (
-                        oddsList[handicapIds[1]].Odds
+                      oddsList[handicap_items[1].id] ? (
+                        oddsList[handicap_items[1].id].odds
                       ) : ''
                     }
                     {
-                      oddsList[handicapIds[1]] && oddsList[handicapIds[1]].increase && oddsList[handicapIds[1]].increase === 1? (
+                      oddsList[handicap_items[1].id] && oddsList[handicap_items[1].id].increase && oddsList[handicap_items[1].id].increase === 1 ? (
                         <span className={styles.increase}>
-                              <Icon type="caret-up" />
+                              <Icon type="caret-up"/>
                             </span>
                       ) : ''
                     }
                     {
-                      oddsList[handicapIds[1]] && oddsList[handicapIds[1]].increase && oddsList[handicapIds[1]].increase === -1? (
+                      oddsList[handicap_items[1].id] && oddsList[handicap_items[1].id].increase && oddsList[handicap_items[1].id].increase === -1 ? (
                         <span className={styles.reduce}>
-                              <Icon type="caret-down" />
+                              <Icon type="caret-down"/>
                             </span>
                       ) : ''
                     }
                   </span>
-                    <img
-                      src={data.Player[1].Logo}
-                      className={styles['player-img']}
-                    />
-                    <span title={data.Player[1].Name} className={`${styles['player-name']} tal`}>
-                      {
-                        data.Player[1].Name
-                      }
-                    </span>
-                  </div>
-                </div>
-              ) :
-                (
-                <div  className={styles.vs}>
-                  <div  className={styles.player} >
-                    <span title={data.Player[0].Name}  className={styles['player-name']}>{data.Player[0].Name}</span>
-                    <img
-                      src={data.Player[0].Logo}
-                      className={styles['player-img']} />
-                    <span className={styles.bet}>
-                  {data.Player[0].Score}
-                  </span>
-                  </div>
-                  <span  className={styles['txt-vs']}>VS</span>
-                  <div  className={styles.player} style={{textAlign: 'left',marginLeft:'5px'}}>
-                <span className={styles.bet} >
-                  {
-                    data.Player[1].Score
-                  }
+                <img
+                  src={data.guest_player.logo}
+                  className={styles['player-img']}
+                />
+                <span title={data.guest_player.name} className={`${styles['player-name']} tal`}>
+                   {
+                     data.guest_player.name
+                   }
                 </span>
-                    <img
-                      src={data.Player[1].Logo}
-                      className={styles['player-img']}
-                    />
-                    <span title={data.Player[0].Name} className={`${styles['player-name']} tal`}>
-                  {
-                    data.Player[1].Name
-                  }
-                </span>
-                  </div>
-                </div>
-              )
-            }
+              </div>
+            </div>
             <div className={styles['match-options']}>
-              <div className={styles['btn-guess']} onClick={this.showBetDetail.bind(null,eventLineIndex)}>+{data.BetCount}</div>
-              <div className={styles['live-icon']} />
+              <div className={styles[`btn-guess-${bgColor[data.game_id]}`]}
+                   onClick={() => this.showBetDetail( eventLineIndex,data.id)}>
+                +{data.handicap_count}
+                <span>盘口</span>
+                </div>
             </div>
           </div>
         </div>
         <div>
           {
             isShowNum === eventLineIndex ? (
-              loading === undefined || loading ? (<div className={styles.loadingBox}><span className={styles.name}>正在加载中</span></div>): (
+              loading === undefined || loading ?
+                (<div className={styles.loadingBox}>
+                  <span className={styles.name}>正在加载中</span>
+                </div>): (
                 <Fade in={!loading} >
-                  <BetDetail  matchHandicapData={matchHandicap}  />
+                  <BetDetail matchHandicapData={matchHandicap} />
                 </Fade>
               )
               ) : ''
-
           }
           </div>
       </li>
-
     );
   }
 }

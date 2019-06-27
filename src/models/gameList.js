@@ -13,15 +13,19 @@ export default {
   },
 
   effects: {
-    *fetchGameList({payload}, { call, put, select }) {
+    *fetchGameList({payload}, { call, put }) {
       let data = yield call(gameList,payload);
-      data = normalizeData(data, 'ID');
+      data = normalizeData(data, 'id');
+      const gameData = JSON.parse(JSON.stringify(data.list));
+      yield put({
+        type: 'gameDB/saveGameData',
+        payload: gameData,
+      });
       yield put({
         type: 'saveGameList',
         payload: data,
       });
     },
-
   },
 
   reducers: {

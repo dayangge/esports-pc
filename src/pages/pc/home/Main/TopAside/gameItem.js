@@ -9,17 +9,17 @@ export default class Aside extends PureComponent {
   render() {
     const { data } = this.props;
     return (
-      <li className={styles['category-item']} key={data.ID}>
+      <li className={styles['category-item']} key={data.id}>
         <img alt=''
-             src={data.Cover}
+             src={data.logo}
              className={styles['game-logo']} />
         <span
-          className={styles.name}>{data.Name}
+          className={styles.name}>{data.name_cn}
         </span>
         {
-          data.Count === 0 || (
+          data.match_count === 0 || (
             <span className={styles.hot}>
-             {data.Count}
+             {data.match_count}
             </span>)
         }
 

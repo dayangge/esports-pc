@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
-import { Tabs,Icon,Input } from 'antd';
+import { Tabs } from 'antd';
 import { connect } from 'dva';
 import styles from './index.scss';
 import AsianHandicap from './AsianHandicap/index';
 import MatchResult from './MatchResult';
 import CountDown from '../../../../../components/CountDown';
-
 
 const {TabPane} = Tabs;
 
@@ -18,7 +17,6 @@ const {TabPane} = Tabs;
 }))
 class Content extends PureComponent {
   state = {
-    maxWidth: undefined,
     showKey: 1
   };
 
@@ -37,7 +35,6 @@ class Content extends PureComponent {
       payload: { gameID, matchType: 1 }
     });
   }
-
 
   fetchMatchList = (key) => {
     const { dispatch,gameAndMatchRequestParams } = this.props;
@@ -87,13 +84,13 @@ class Content extends PureComponent {
               <MatchResult resultData={matchResult} toggleGameLoading={matchResultLoading} />
             </TabPane>
           </Tabs>
-          <div className={styles['search-box']}>
-            <Icon  theme="twoTone" type="clock-circle" />
+          {/*<div className={styles['search-box']}>
+           <Icon  theme="twoTone" type="clock-circle" />
             <span className={styles.countdown}>
               <CountDown time='60' onEnd={this.fetchMatchList} />
               s</span>
             <Input className={styles['search-input']}/>
-          </div>
+          </div>*/}
         </div>
       </div>
     );

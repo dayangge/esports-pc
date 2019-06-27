@@ -1,5 +1,5 @@
 import { matchHandicap } from 'esports-core/services/api';
-import { normalizeData } from 'esports-core/utils/util';
+import { normalizeData, newDataAccordingToID } from 'esports-core/utils/util';
 
 
 export default {
@@ -7,23 +7,26 @@ export default {
 
   state: {
     matchHandicap: {
-      data:{
-        Round:[]
-      },
-      list: []
-    },
+      list: [],
+      round: []
+    }
   },
 
   effects: {
     *fetchMatchHandicap({ payload }, { call, put, select }) {
       let data = yield call(matchHandicap, payload);
-      data.list= normalizeData(data.list,'BetID');
-      data.list.ids.map((val) => {
-        data.list.list[val].Items = normalizeData(data.list.list[val].Items ,'ItemID');
+      let data1 = normalizeData(data,'handicaps_id');
+      const matchHandicapDB = yield select( state => state.matchHandicapDB.matchHandicapDB);
+      const newMatchHandicapDB = Object.assign({}, matchHandicapDB, data1.list);
+      let data2 = newDataAccordingToID(data,'round');
+      console.log(data2);
+      yield put({
+        type: 'matchHandicapDB/saveMatchHandicapData',
+        payload: newMatchHandicapDB,
       });
       yield put({
         type: 'save',
-        payload: data,
+        payload: data2,
       });
     },
   },

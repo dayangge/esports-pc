@@ -1,17 +1,18 @@
+@import "../../../../styles/utils";
 .notice-wrapper{
   padding: 4px 0 5px;
   width: 100%;
   overflow: hidden;
   z-index: 4;
   color: #fff;
-  background: #000;
   position: absolute;
-  top: 50px;
+  top: 106px;
   left: 0;
   right: 0;
+  font-size: 14px;
   .box{
     margin: 0 auto;
-    width: 1000px;
+    width: 1120px;
   }
   .nav-notice{
     width: 120px;
@@ -19,7 +20,7 @@
     display: inline-block;
   }
  .marquee{
-   width: 855px;
+   width: 985px;
    position: relative;
    vertical-align: middle;
    white-space: nowrap;
@@ -29,4 +30,7 @@
      cursor: pointer;
    }
   }
+}
+.annListTitle{
+  @include textOverflow
 }

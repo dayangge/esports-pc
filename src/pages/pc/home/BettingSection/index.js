@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react';
 import {Icon} from 'antd'
 import { connect } from 'dva';
+import BetShopCart from './BetShopCart';
+import RecentBets from './RecentBets';
+import Fade from '../../../../components/fadeAninate'
+
 import styles from './index.scss';
 @connect(({ showGameLog}) => ({
   showGameLog,
@@ -32,8 +36,6 @@ class BettingSection extends PureComponent {
     })
   };
 
-
-
   render() {
     const { slideIn,isTabs } = this.state;
     return (
@@ -43,12 +45,21 @@ class BettingSection extends PureComponent {
         </div>
         <div className={styles.header}>
           <span>竞猜单</span>
-          {isTabs === 'bet'?<Icon className={styles.iconfont} type="delete" /> :
+          {
+            isTabs === 'bet'?<Icon className={styles.iconfont} type="delete" /> :
             <div className={styles.more} onClick={this.showGameLog}>查看更多</div>
           }
-
         </div>
         <div className={styles.container}>
+          {
+            isTabs === 'bet' ?
+              <Fade in={isTabs === 'bet'} >
+                <BetShopCart />
+              </Fade>:
+              <Fade in={isTabs === 'recent'} >
+                <RecentBets />
+              </Fade>
+          }
 
         </div>
         <div className={styles.bottom}>

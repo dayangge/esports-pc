@@ -7,7 +7,7 @@ import Slide from '../../../../../../../components/slideAnimate/index';
   oddsList,
   Loading: loading.models.matchHandicap,
 }))
-class firstRound extends PureComponent {
+class betDetail extends PureComponent {
   state = {
     show: false,
     isShowNum: 0,
@@ -19,54 +19,62 @@ class firstRound extends PureComponent {
     });
   };
 
+  renderOneRound() {
+    const { matchHandicapData, } = this.props;
+    const { list , round } = matchHandicapData;
+  }
+
+  renderMoreRound() {
+
+  }
+
   render() {
     const { isShowNum } = this.state;
     const {
       matchHandicapData,
       oddsList: { oddsList },
     } = this.props;
-    const { data: { Round }, list } = matchHandicapData;
-    const { ids } = list;
-    const handicapList= list.list;
+    const { list , round } = matchHandicapData;
     return (
         <div className={styles.bet} >
           <div>
               <div className={styles.round}>
                 <div className={styles['round-tab']}>
                   {
-                    Round.map((val, index) => (
-                      <div key={val.ID}
+                    round.map((val, index) => (
+                      <div key={val.id}
                            className={isShowNum === index ? `${styles.item} ${styles.active}` : `${styles.item}`}
-                           onClick={() => this.showTabs(index)}>{val.Name}</div>
+                           onClick={() => this.showTabs(index)}>{val.name}</div>
                     ))
                   }
                 </div>
                 {
-                  Round.map((val, index) => (
-                    <Slide come={isShowNum === index} clsName='slides' key={val.ID}>
+                  round.length > 1 ? '' : ''
+                }
+                {
+                  round.map((val, index) => (
                       <ul className={styles.list}
                           style={isShowNum === index ? { display: 'block' } : { display: 'none' }}
-                          key={val.ID}
+                          key={val.id}
                       >
                         {
-                          ids.map((item) => (
-                            handicapList[item].Round === val.ID ? (
-                              <li className={styles.item} key={handicapList[item].BetID}>
+                          list[val.id].map((item) => (
+                              <li className={styles.item} key={ item.handicaps_id } >
                                 <table className={styles['table-item']}>
                                   <tbody>
                                   <tr>
                                     <td className={styles['bet-name']}>
-                                      {handicapList[item].Name}
+                                      { item.handicaps_name}
                                     </td>
                                     <td>
                                       {
-                                        handicapList[item].Items.ids.map((v) => (
-                                          <div className={styles['pankou-row']} key={v}>
+                                        item.handicap_items.map((v) => (
+                                          <div className={styles['pankou-row']} key={v.handicap_items_id}>
                                           <span className={styles['pankou-name'] + 'txt-ellipsis'}>
-                                            {handicapList[item].Items.list[v].Name}
+                                            { v.handicaps_name}
                                           </span>
                                             <span className={styles['pankou-result']}>
-                                              {oddsList[v].Odds}
+                                              {oddsList[v.handicap_items_id].odds}
                                           </span>
                                           </div>
                                         ))
@@ -76,11 +84,9 @@ class firstRound extends PureComponent {
                                   </tbody>
                                 </table>
                               </li>
-                            ) : ''
                           ))
                         }
                       </ul>
-                    </Slide>
                   ))
                 }
               </div>
@@ -90,4 +96,4 @@ class firstRound extends PureComponent {
   }
 }
 
-export default firstRound;
+export default betDetail;

@@ -1,20 +1,36 @@
 import React, { PureComponent } from 'react';
-import Link from 'umi/link';
 import { Icon } from 'antd';
 import styles from './index.scss';
+import AnnList from './AnnList'
 
 
 export default class TopHeader extends PureComponent {
   state = {
-    maxWidth: undefined,
+    AnnListVisible: false,
+  };
+
+  showAnnList = () => {
+    this.setState({
+      annListVisible:true
+    })
+  };
+
+  closeAnnListModal = () => {
+    this.setState({
+      annListVisible:false
+    })
   };
 
   render() {
-
+    const { annListVisible } = this.state
     return (
       <div  className={styles['notice-wrapper']}>
         <div  className={styles.box}>
-          <a  className={styles['nav-notice']}><Icon type="sound" />&nbsp;&nbsp;公告中心</a>
+          <a
+            className={styles['nav-notice']}
+              onClick={this.showAnnList}>
+            <Icon type="sound" />&nbsp;&nbsp;公告中心
+          </a>
           <marquee  className={styles.marquee}><a  className="msg"><em >[2019-05-26
             02:49]</em>&nbsp;&nbsp;请注意:[电子竞技][早盘][反恐精英]ArenaBulls VS PACT[2019/5/26 2:00:00]比赛延期公告</a><a
              className="msg"><em >[2019-05-25
@@ -26,6 +42,7 @@ export default class TopHeader extends PureComponent {
              className="msg"><em >[2019-05-25
             01:01]</em>&nbsp;&nbsp;请注意:[电子竞技][早盘][反恐精英]Portal VS Italy[2019/5/24 22:00:00]注单取消公告</a></marquee>
         </div>
+        <AnnList AnnListVisible={annListVisible} closeAnnListModal={this.closeAnnListModal}/>
       </div>
     );
   }

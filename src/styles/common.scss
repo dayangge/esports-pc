@@ -2,3 +2,22 @@ $normal-color: #d9d9d9;
 $white: #fff;
 $black: #000;
 $bg-color: #e43342;
+
+@mixin betBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition: all .5s;
+  cursor: pointer;
+  background: transparent;
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 10%;
+}
+

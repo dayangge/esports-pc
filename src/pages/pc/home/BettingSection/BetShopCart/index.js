@@ -1,8 +1,7 @@
 import React, { PureComponent,Fragment } from 'react';
 import Link from 'umi/link';
 import {Icon} from 'antd'
-import styles from './index.scss';
-import Slide from '@/components/slideAnimate'
+import styles from '../index.scss';
 
 
 export default class TopHeader extends PureComponent {
@@ -10,54 +9,53 @@ export default class TopHeader extends PureComponent {
     slideIn: false
   };
 
-  changeBetSectionPos = () => {
-    const { slideIn } = this.state;
-    this.setState({
-      slideIn: !slideIn
-    })
-  };
-
   render() {
     return (
      <Fragment>
-        <div className={styles.container}>
           <div className={styles['bet-box']}>
-            <div className={styles['bet-content']}>
-              <div className={styles['bet-list']}>
-                <div className={styles['bet-item']}>
+              <ul className={styles['bet-list']}>
+                <li className={styles['bet-item']}>
                   <div className={styles['bet-item-header']}>
-                    <span className={styles['item-title']}>
+                    <Icon type="play-circle" className={styles.icon}/>
+                    <span className={styles.title}>
                       [BO3]Dominus Esports VS Edward Gaming 比赛获胜
                     </span>
                   </div>
                   <div className={styles['bet-item-content']}>
-                    <div className={styles.box}>
-                      <div className={styles['text-row']}>
-                        <span>EDG</span>
-                        <span>投注额</span>
-                        <span>收益</span>
+                      <div className={styles.handicapInfo}>
+                        <span className={styles.handicap}>EDG</span>
+                        <span className={styles.betMoney}>投注额</span>
+                        <span className={styles.win}>收益</span>
                       </div>
-                      <div className={styles['bet-box']}>
+                      <div className={styles.winInfo}>
                         <span className={styles.odds}>2.10</span>
                         <span>x</span>
-                        <div className={styles['bet-input']}>
-                          <div className={styles.select}>
-                            <input className={styles['input-sel']}/>
-                          </div>
+                        <div className={styles['bet-select']}>
+                          <input className={styles['bet-select-input']}/>
                         </div>
-                        <div className={styles.result}>
-                          <span>=</span>
-                          <span className={styles.num}>￥21.03</span>
-                          <Icon className={styles.del} type="close-circle" />
-                        </div>
+                        <span>=</span>
+                        <span className={styles.money}>￥21.03</span>
+                        <Icon className={styles.del} type="close-circle" />
+
                       </div>
-                    </div>
                   </div>
-                </div>
+                </li>
+            </ul>
+          </div>
+          <div className={styles['bet-total']}>
+            <div className={styles.calc}>
+              <div className={styles.left}>总投注额:</div>
+              <div className={styles.right}>总收益额:</div>
+            </div>
+            <div className={styles.button}>
+              <button className={styles['button-submit']}>
+                确定投注
+              </button>
+              <div className={styles.warning}>
+                系统将自动接收较佳收益率
               </div>
             </div>
           </div>
-        </div>
      </Fragment>
 
     );
