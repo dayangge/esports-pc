@@ -73,14 +73,94 @@
       width: 620px;
       position: absolute;
       text-align: center;
-      display: inline-block;
       font-size: 14px;
-      .player {
-        width: 275px;
-        text-align: right;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .txt-vs {
+        display: block;
+        text-align: center;
+        width: 50px;
+        font-size: 18px;
+        vertical-align: middle;
+        font-weight: bold;
+      }
+      .home-player {
+         width: 265px;
+         text-align: center;
+         display: inline-block;
+         .player-name {
+           text-align: center;
+           width: 100px;
+           vertical-align: middle;
+           display: inline-block;
+           overflow: hidden;
+           white-space: nowrap;
+           text-overflow: ellipsis;
+           font-size: 16px;
+           font-weight: 400;
+           margin-right: 5px;
+         }
+         .player-img {
+           width: 40px;
+           height: 40px;
+           border-radius: 50%;
+           vertical-align: middle;
+           margin-right: 30px;
+         }
+         .bet {
+           color: #fff;
+           background: #ff7800;
+           position: relative;
+           width: 52px;
+           height: 30px;
+           line-height: 30px;
+           font-size: 15px;
+           font-weight: 700;
+           display: inline-block;
+           vertical-align: middle;
+           cursor: pointer;
+           margin-right: 5px;
+           text-align: center;
+           box-shadow: 0 0 0 #fff;
+           transition: all .2s;
+           border-radius:6px;
+           &:hover {
+             box-shadow: 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff;
+           }
+           .increase {
+             top: -22px;
+             left: 18px;
+             color: #FF1E1E;
+             font-size: 17px;
+             opacity: 0;
+             -webkit-animation: flash 1s linear 6 alternate;
+             animation: flash 1s linear 6 alternate;
+             position: absolute;
+           }
+           .reduce {
+             top: 22px;
+             left: 18px;
+             color: #27ff33;
+             font-size: 16px;
+             opacity: 0;
+             -webkit-animation: flash 1s linear 6 alternate;
+             animation: flash 1s linear 6 alternate;
+             position: absolute;
+           }
+           em {
+             position: relative;
+           }
+         }
+
+       }
+      .guest-player {
+        width: 265px;
+        text-align: center;
         display: inline-block;
         .player-name {
-          width: 130px;
+          text-align: center;
+          width: 100px;
           vertical-align: middle;
           display: inline-block;
           overflow: hidden;
@@ -93,8 +173,9 @@
         .player-img {
           width: 40px;
           height: 40px;
+          border-radius: 50%;
           vertical-align: middle;
-          margin-right: 10px;
+          margin-left: 30px;
         }
         .bet {
           color: #fff;
@@ -112,6 +193,7 @@
           text-align: center;
           box-shadow: 0 0 0 #fff;
           transition: all .2s;
+          border-radius:6px;
           &:hover {
             box-shadow: 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff;
           }
@@ -138,13 +220,6 @@
           em {
             position: relative;
           }
-          .txt-vs {
-            width: 52px;
-            font-size: 18px;
-            vertical-align: middle;
-            display: inline-block;
-            font-weight: bold;
-          }
         }
 
       }
@@ -160,28 +235,28 @@
 }
 
 .match-item-lol {
-  background: linear-gradient(to right, #4858a6, #2a304a);
-  margin-bottom: 1px;
+  background: $bg-lol;
+  margin-bottom: $matchLineBottom;
 }
 .match-item-dota2 {
-  background: linear-gradient(to right, #412526, #412526);
-  margin-bottom: 1px;
+  background: $bg-dota2;
+  margin-bottom: $matchLineBottom;
 }
 .match-item-csgo {
-  background: linear-gradient(to right, #b17c29, #6e4300);
-  margin-bottom: 1px;
+  background: $bg-csgo;
+  margin-bottom: $matchLineBottom;
 }
 .match-item-pubg {
-  background: linear-gradient(to right, #6b562b, #4a3e24);
-  margin-bottom: 1px;
+  background: $bg-pubg;
+  margin-bottom: $matchLineBottom;
 }
 .match-item-gok {
-  background: linear-gradient(to right, #915026, #632d11);
-  margin-bottom: 1px;
+  background: $bg-gok;
+  margin-bottom: $matchLineBottom;
 }
 .match-item-ow {
-  background: linear-gradient(to right, #555964, #2d2e30);
-  margin-bottom: 1px;
+  background: $bg-ow;
+  margin-bottom: $matchLineBottom;
 }
 .btn-guess-lol{
   @include betBtn;

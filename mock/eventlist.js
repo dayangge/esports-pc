@@ -29,12 +29,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [
           {
@@ -111,12 +111,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 5633,
@@ -190,12 +190,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 3530,
@@ -269,12 +269,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 5665,
@@ -350,12 +350,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 4309,
@@ -429,12 +429,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 5448,
@@ -508,12 +508,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1752,
@@ -587,12 +587,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1295,
@@ -665,12 +665,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 5718,
@@ -744,12 +744,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 5114,
@@ -824,12 +824,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1463,
@@ -904,12 +904,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 4785,
@@ -984,12 +984,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 4788,
@@ -1064,12 +1064,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 4789,
@@ -1144,12 +1144,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1870,
@@ -1224,12 +1224,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1025,
@@ -1304,12 +1304,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1023,
@@ -1384,12 +1384,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1416,
@@ -1464,12 +1464,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1837,
@@ -1544,12 +1544,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1863,
@@ -1624,12 +1624,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 4879,
@@ -1704,12 +1704,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 4846,
@@ -1785,12 +1785,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 4881,
@@ -1865,12 +1865,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1871,
@@ -1945,12 +1945,12 @@ export default {
         "host_player": {
                 "id": "fwefewff",
                 "name": "IG",
-                "logo": "fwefwef"
+                "logo": "https://img.avia01.com/upload/201803/15170511cc73.png"
             },
             "guest_player": {
                 "id": "fwegwegweg",
                 "name": "AG",
-                "logo": "beegg"
+                "logo": "https://img.avia01.com/upload/201905/081821475121.png"
             },
         'Player': [{
           'ID': 1115,

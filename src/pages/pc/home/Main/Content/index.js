@@ -29,16 +29,16 @@ class Content extends PureComponent {
 
   componentDidMount() {
     const { dispatch,gameAndMatchRequestParams } = this.props;
-    const { gameID } =  gameAndMatchRequestParams;
+    const { game_id } =  gameAndMatchRequestParams;
     dispatch({
       type: 'matchList/fetchMatchList',
-      payload: { gameID, matchType: 1 }
+      payload: { game_id, matchType: 1 }
     });
   }
 
   fetchMatchList = (key) => {
     const { dispatch,gameAndMatchRequestParams } = this.props;
-    const { gameID } =  gameAndMatchRequestParams;
+    const { game_id } =  gameAndMatchRequestParams;
     if(key === '4'){
       dispatch({
         type: 'gameAndMatchRequestParams/modifyMatchType',
@@ -46,7 +46,7 @@ class Content extends PureComponent {
       });
       dispatch({
         type: 'matchResult/fetchMatchResult',
-        payload: { gameID }
+        payload: { game_id }
       });
     }else {
       dispatch({
@@ -55,7 +55,7 @@ class Content extends PureComponent {
       });
       dispatch({
         type: 'matchList/fetchMatchList',
-        payload: { gameID, matchType: key }
+        payload: { game_id, matchType: key }
       });
     }
   };

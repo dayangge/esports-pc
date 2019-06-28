@@ -13,28 +13,28 @@ export default {
               'data': null,
               'list': [
                 {
-                'ID': '32851',
-                'Title': '[BO1]Vivo Keyd VS Havan Liberty',
-                'CateID': '2',
-                'Category': '英雄联盟',
-                'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
-                'LeagueID': '3073',
-                'League': '巴西挑战者联赛',
-                'HomeID': '1344',
-                'HomeLogo': 'https://img.avia01.com/upload/201804/09192854b64b.png',
-                'HomeName': 'Vivo Keyd',
-                'HomeScore': '1',
-                'AwayID': '4671',
-                'AwayName': 'Havan Liberty',
-                'AwayLogo': 'https://img.avia01.com/upload/201901/2115170324be.png',
-                'AwayScore': '0',
-                'StartAt': '2019/6/18 9:55:00',
-                'EndAt': '2019/6/18 10:45:00',
+                  'ID': '32851',
+                  'Title': '[BO1]Vivo Keyd VS Havan Liberty',
+                  'game_id':1,
+                  'Category': '英雄联盟',
+                  'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
+                  'LeagueID': '3073',
+                  'League': '巴西挑战者联赛',
+                  'HomeID': '1344',
+                  'HomeLogo': 'https://img.avia01.com/upload/201804/09192854b64b.png',
+                  'HomeName': 'Vivo Keyd',
+                  'HomeScore': '1',
+                  'AwayID': '4671',
+                  'AwayName': 'Havan Liberty',
+                  'AwayLogo': 'https://img.avia01.com/upload/201901/2115170324be.png',
+                  'AwayScore': '0',
+                  'StartAt': '2019/6/18 9:55:00',
+                  'EndAt': '2019/6/18 10:45:00',
               },
                 {
                 'ID': '32849',
                 'Title': '[BO1]Red Canids VS Falkol',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3073',
@@ -52,7 +52,7 @@ export default {
               }, {
                 'ID': '32850',
                 'Title': '[BO1]Rensga VS ProGaming',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3073',
@@ -70,7 +70,7 @@ export default {
               }, {
                 'ID': '32848',
                 'Title': '[BO1]Vodafone Giants VS Movistar Riders',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3274',
@@ -88,7 +88,7 @@ export default {
               }, {
                 'ID': '32847',
                 'Title': '[BO1]MAD Lions VS S2V Esports',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3274',
@@ -106,7 +106,7 @@ export default {
               }, {
                 'ID': '32846',
                 'Title': '[BO1]G2 Heretics VS X6tence',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3274',
@@ -124,7 +124,7 @@ export default {
               }, {
                 'ID': '32845',
                 'Title': '[BO1]Penguins VS eMonkeyz',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3274',
@@ -142,7 +142,7 @@ export default {
               }, {
                 'ID': '32844',
                 'Title': '[BO1]Origen BCN VS Team Queso',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3274',
@@ -160,7 +160,7 @@ export default {
               }, {
                 'ID': '32790',
                 'Title': '[BO3]Top Esports VS RogueWarriors',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3251',
@@ -178,7 +178,7 @@ export default {
               }, {
                 'ID': '32843',
                 'Title': '[BO3]MVP VS Brion Blade',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3080',
@@ -196,7 +196,7 @@ export default {
               }, {
                 'ID': '32789',
                 'Title': '[BO3]Vici Gaming VS Victory Five',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3251',
@@ -214,7 +214,7 @@ export default {
               }, {
                 'ID': '32842',
                 'Title': '[BO3]Team Dynamics VS Spear Gaming',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3080',
@@ -232,7 +232,7 @@ export default {
               }, {
                 'ID': '32833',
                 'Title': '[BO1]Counter Logic Gaming Academy VS OpTic Academy',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '2571',
@@ -250,7 +250,7 @@ export default {
               }, {
                 'ID': '32443',
                 'Title': '[BO1]Isurus Gaming VS All Knights',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3071',
@@ -268,7 +268,7 @@ export default {
               }, {
                 'ID': '32613',
                 'Title': '[BO1]Golden Guardins VS Counter Logic Gaming',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3061',
@@ -286,7 +286,7 @@ export default {
               }, {
                 'ID': '32442',
                 'Title': '[BO1]Kaos Latin VS Rainbow7',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3071',
@@ -304,7 +304,7 @@ export default {
               }, {
                 'ID': '32612',
                 'Title': '[BO1]Clutch Gaming VS FlyQuest',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3061',
@@ -322,7 +322,7 @@ export default {
               }, {
                 'ID': '32441',
                 'Title': '[BO1]Furious Gaming VS Infinity eSports',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3071',
@@ -340,7 +340,7 @@ export default {
               }, {
                 'ID': '32611',
                 'Title': '[BO1]Cloud 9 VS Team SoloMid',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3061',
@@ -358,7 +358,7 @@ export default {
               }, {
                 'ID': '32440',
                 'Title': '[BO1]Pixel eSports Club VS XTEN Esports',
-                'CateID': '2',
+                'game_id':1,
                 'Category': '英雄联盟',
                 'CateLogo': 'https://img.avia01.com/upload/201906/110616158a35.png',
                 'LeagueID': '3071',
@@ -377,6 +377,6 @@ export default {
             },
           },
         );
-      }, 2000);
+      }, 1000);
     },
 };

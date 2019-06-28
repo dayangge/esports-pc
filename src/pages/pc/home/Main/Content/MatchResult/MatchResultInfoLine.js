@@ -3,6 +3,7 @@ import { Icon, } from 'antd';
 import styles from './index.scss';
 import Fade from '../../../../../../components/fadeAninate';
 import moment from 'moment';
+import { gameBgColor } from 'esports-core/utils/util'
 
 class MatchInfoLine extends PureComponent {
   state = {
@@ -17,7 +18,7 @@ class MatchInfoLine extends PureComponent {
     const { data} = this.props;
     return (
       <li className={styles['match-item']}>
-        <div className={styles['match-box']}>
+        <div className={styles[`match-item-${gameBgColor[data.game_id]}`]}>
           <div className={styles['match-box']}>
             <div className={styles['game-info']}>
               <img
@@ -75,16 +76,16 @@ class MatchInfoLine extends PureComponent {
           </div>
         </div>
         <div>
-       {/*   {
-            isShowNum === eventLineIndex ? (
-              loading === undefined || loading ? (<div className={styles.loadingBox}><span className={styles.name}>正在加载中</span></div>): (
-                <Fade in={!loading} >
-                  <BetDetail  matchHandicapData={matchHandicap}  />
-                </Fade>
-              )
-            ) : ''
+         {/*   {
+              isShowNum === eventLineIndex ? (
+                loading === undefined || loading ? (<div className={styles.loadingBox}><span className={styles.name}>正在加载中</span></div>): (
+                  <Fade in={!loading} >
+                    <BetDetail  matchHandicapData={matchHandicap}  />
+                  </Fade>
+                )
+              ) : ''
 
-          }*/}
+            }*/}
         </div>
       </li>
 

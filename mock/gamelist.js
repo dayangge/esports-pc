@@ -189,39 +189,7 @@ export default {
         'match_count': 12,
         'enable': true,
         'sort':1
-      }, {
-        'id': 2325,
-        'name_cn': '拳击之夜',
-        'name_en': 'Fight Night',
-        'logo': 'https://img.avia01.com/upload/201806/16175319ff4a.png',
-        'match_count': 12,
-        'enable': true,
-        'sort':1
-      }, {
-        'id': 2324,
-        'name_cn': '坦克世界',
-        'name_en': '',
-        'logo': 'https://img.avia01.com/upload/201806/161749004331.png',
-        'match_count': 12,
-        'enable': true,
-        'sort':1
-      }, {
-        'id': 2323,
-        'name_cn': '街头霸王5',
-        'name_en': '',
-        'logo': 'https://img.avia01.com/upload/201806/16174704f920.png',
-        'match_count': 12,
-        'enable': true,
-        'sort':1
-      }, {
-        'id': 3138,
-        'name_cn': '传说对决',
-        'name_en': '传说对决',
-        'logo': 'https://img.avia01.com/upload/201902/272241290a23.png',
-        'match_count': 12,
-        'enable': true,
-        'sort':1
-      }, {
+      },  {
         'id': 2920,
         'name_cn': '地下城与勇士',
         'name_en': 'DNF',
@@ -232,5 +200,5 @@ export default {
       }
     ]
         })
-      }, 2000)}
+      }, 1000)}
 }

@@ -13,7 +13,7 @@ class Aside extends PureComponent {
   };
 
   render() {
-    const { ids ,list ,gameDB: {gameDB} } =  this.props;
+    const { ids ,list ,gameDB: { gameDB } } =  this.props;
     return (
       <div className={styles['asize-scroll-wrapper']}>
         <div className={`${styles['aside-left']} f1`}>
@@ -28,9 +28,7 @@ class Aside extends PureComponent {
                   }
                 </ul>
               ): <MaskLoading />
-
             }
-
           </aside>
         </div>
       </div>

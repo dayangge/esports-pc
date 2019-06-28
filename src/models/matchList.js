@@ -22,14 +22,15 @@ export default {
       data = normalizeData(data, 'id');
       const matchDB = yield select( state => state.matchDB.matchDB);
       const newMatchDB = Object.assign({},matchDB,data.list);
-      /* data.map((v) => {
-        v.Bet.map((val) => {
-          val.Items = normalizeData(val.Items,'ItemID');
-        });
-      })*/
+      const { game_id } = payload
+
       yield put({
         type: 'matchDB/saveMatchData',
         payload: newMatchDB,
+      });
+      yield put({
+        type: 'gameDB/saveGameMatchListData',
+        payload: {newMatchDB, game_id},
       });
       yield put({
         type: 'save',

@@ -6,31 +6,114 @@
   overflow-y: auto;
   .round{
     .round-tab{
-      background-color: #1d2435;
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 10px;
+      padding-bottom: 6px;
+      background-color: #273044;
       color: #6c7995;
-      border-left: 1px solid #000;
-      border-right: 1px solid #000;
-      padding: 8px 0 7px 90px;
       .item{
-        padding: 5px 7px !important;
-        background-color: #313d57;
         box-sizing: border-box;
-        margin-right: 3px;
-        font-size: 12px;
         text-align: center;
         display: inline-block;
         cursor: pointer;
+        padding: 3px 0;
+        letter-spacing: 1px;
         &.active{
-          color: #fff;
-          border: 1px solid #7a88a7;
-          background-color: #434f6b;
+          color: #273044;
+          border-bottom: 2px solid #b00f15;
+          background-color: #ffb83b;
+          font-weight: 700;
         }
+          .text{
+            box-sizing: content-box;
+            font-size: 14px;
+            line-height: 16px;
+            padding: 0 10px;
+            border-right:1px solid #53678c;
+            &:first-child{
+              border-left:1px solid #53678c;
+            }
+          }
       }
 
     }
   }
   .list{
     width: 100%;
+    background-color: #273044;
+    .allRound-box{
+      color: #fff;
+      border-bottom: none;
+      justify-content: flex-start;
+      align-items: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 4px 0;
+      .allRound{
+        width: 90%;
+        margin: 0 auto;
+        height: 60px;
+        border-radius: 10px;
+        background: linear-gradient(to right,#672a2f, #20416e);
+        margin-bottom: 4px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 0 6px #fff inset;
+        .home-name{
+          width: 10%;
+        }
+        .home-logo{
+          width: 10%;
+        }
+        .home-odds{
+          width: 10%;
+          button{
+            width: 60px;
+            height: 36px;
+            border-radius: 6px;
+            background-color: #b00f15;
+            outline: none;
+            border: none;
+            transition: all .2s;
+            cursor: pointer;
+            &:hover {
+              box-shadow: 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff;
+            }
+          }
+
+        }
+        .handicap-name{
+          width: 40%;
+          text-align: center;
+        }
+        .guest-name{
+          width: 10%;
+        }
+        .guest-logo{
+          width: 10%;
+        }
+        .guest-odds{
+          width: 10%;
+          button{
+            width: 60px;
+            height: 36px;
+            border-radius: 6px;
+            background-color: #386eb6;
+            outline: none;
+            border: none;
+            transition: all .2s;
+            cursor: pointer;
+            &:hover {
+              box-shadow: 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff;
+            }
+          }
+        }
+      }
+    }
     .item{
       color: #fff;
       border: 1px solid #000;

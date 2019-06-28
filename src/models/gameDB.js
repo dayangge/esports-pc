@@ -14,6 +14,12 @@ export default {
         payload: payload,
       });
     },
+    *saveGameMatchListData({payload}, { call, put, select }) {
+      yield put({
+        type: 'saveMatchList',
+        payload: payload,
+      });
+    },
 
   },
 

@@ -1,7 +1,12 @@
-$normal-color: #d9d9d9;
-$white: #fff;
-$black: #000;
-$bg-color: #e43342;
+/*比赛列表距离底部距离*/
+$matchLineBottom: 2px;
+$bg-lol: linear-gradient(to right, #4858a6, #2a304a);
+$bg-dota2: linear-gradient(to right, #812f2b, #412526);
+$bg-csgo: linear-gradient(to right, #b17c29, #6e4300);
+$bg-ow: linear-gradient(to right, #555964, #2d2e30);
+$bg-gok: linear-gradient(to right, #915026, #632d11);
+$bg-pubg: linear-gradient(to right, #6b562b, #4a3e24);
+
 
 @mixin betBtn {
   display: flex;
