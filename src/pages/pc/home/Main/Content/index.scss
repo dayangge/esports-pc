@@ -25,26 +25,38 @@
     .search-box{
       margin: 4px 5px 0 0;
       width: 200px;
-      height: 28px;
+      height: 24px;
       box-sizing: border-box;
       position: absolute;
-      top: -10px;
+      top: -72px;
       right: 10px;
-      background-color: #121212;
+      .countClock{
+        top: 6px;
+        right: 240px;
+        cursor: pointer;
+        position: absolute;
+        color: white;
+      }
       .countdown{
         top: 3px;
-        right: 160px;
+        right: 210px;
         cursor: pointer;
         position: absolute;
         color: white;
       }
       .search-input{
+        right: 10px;
+        top: 1px;
+        border: 1px solid #b9b9bb;
+        border-radius: 4px;
         float: right;
-        width: 155px;
+        width: 185px;
         height: 100%;
-        text-indent: 5px;
         color: #fff;
         background: transparent;
+        span{
+          color: white;
+        }
       }
     }
   }

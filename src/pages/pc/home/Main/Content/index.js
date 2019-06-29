@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Tabs } from 'antd';
+import { Tabs,Icon,Input } from 'antd';
 import { connect } from 'dva';
 import styles from './index.scss';
 import AsianHandicap from './AsianHandicap/index';
@@ -7,6 +7,7 @@ import MatchResult from './MatchResult';
 import CountDown from '../../../../../components/CountDown';
 
 const {TabPane} = Tabs;
+const { Search } = Input;
 
 @connect(({ matchList, matchResult, gameAndMatchRequestParams, loading }) => ({
   matchList,
@@ -84,13 +85,13 @@ class Content extends PureComponent {
               <MatchResult resultData={matchResult} toggleGameLoading={matchResultLoading} />
             </TabPane>
           </Tabs>
-          {/*<div className={styles['search-box']}>
-           <Icon  theme="twoTone" type="clock-circle" />
+          <div className={styles['search-box']}>
+            <Icon className={styles.countClock}  type="clock-circle" />
             <span className={styles.countdown}>
               <CountDown time='60' onEnd={this.fetchMatchList} />
               s</span>
-            <Input className={styles['search-input']}/>
-          </div>*/}
+            <Search className={styles['search-input']} onSearch={value => console.log(value)} />
+          </div>
         </div>
       </div>
     );

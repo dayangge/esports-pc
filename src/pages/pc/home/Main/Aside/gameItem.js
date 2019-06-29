@@ -14,7 +14,10 @@ class GameItem extends PureComponent {
 
   };
 
-  fetchGameList = (id) => {
+  fetchGameList = (id,isActive) => {
+    if(isActive){
+      return false
+    }
     const { dispatch,gameAndMatchRequestParams } = this.props;
     const { matchType} =  gameAndMatchRequestParams;
     dispatch({
@@ -37,9 +40,10 @@ class GameItem extends PureComponent {
   render() {
     const { data,gameAndMatchRequestParams } = this.props;
     const { game_id} =  gameAndMatchRequestParams;
+    const  isActive  = game_id === data.id;
     return (
-      <li className={game_id === data.id?(`${styles['category-item']} ${styles.active}`) : styles['category-item'] }
-          key={data.id} onClick={() => this.fetchGameList(data.id)}>
+      <li className={ isActive ?(`${styles['category-item']} ${styles.active}`) : styles['category-item'] }
+          key={data.id} onClick={() => this.fetchGameList(data.id, isActive)}>
         <img alt=''
              src={data.logo}
              className={styles['game-logo']} />

@@ -163,9 +163,9 @@ class MatchInfoLine extends PureComponent {
                 (<div className={styles.loadingBox}>
                   <span className={styles.name}>正在加载中</span>
                 </div>) : (
-                  <Fade in={!loading}>
+                  <div in={!loading}>
                     <BetDetail matchHandicapData={matchHandicap} matchID={data.id}/>
-                  </Fade>
+                  </div>
                 )
             ) : ''
           }

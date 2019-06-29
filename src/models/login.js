@@ -1,4 +1,4 @@
-import { loginApp } from 'esports-core/services/api';
+import { loginApp,login1 } from 'esports-core/services/api';
 
 export default {
   namespace: 'login',
@@ -13,6 +13,14 @@ export default {
   effects: {
     *login({ payload, callback }, { call, put }) {
       let data = yield call(loginApp, payload);
+      yield put({
+        type: 'save',
+        payload: data,
+      });
+      if (callback) callback(data);
+    },
+    *login1({ payload, callback }, { call, put }) {
+      let data = yield call(login1, payload);
       yield put({
         type: 'save',
         payload: data,
