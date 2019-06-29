@@ -178,26 +178,11 @@ button{
   outline: none;
 }
 
-.fr{
-  float: right !important;
-}
-.fl{
-  float: left !important;
-}
-.tal{
-  text-align: left;
-}
 .msg{
   margin-right: 200px;
   display: inline-block;
 }
 
-.mrl15{
-  margin-left: 15px;
-}
-.mrl5{
-  margin-left: 5px;
-}
 table{
   border-collapse: collapse;
   border-spacing: 0;
@@ -523,3 +508,5 @@ td{
 .ant-input-search-icon{
   color: white;
 }
+
+

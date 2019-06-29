@@ -1,3 +1,4 @@
+@import "../../../../../../../styles/common";
 .bet{
   background: linear-gradient(#232e3f, #171821);
   width: 100%;
@@ -6,7 +7,7 @@
   overflow-y: auto;
   .round{
     .round-tab{
-      width: 90%;
+      width: 80%;
       margin: 0 auto;
       padding-top: 10px;
       padding-bottom: 6px;
@@ -54,7 +55,7 @@
       .allRound{
         width: 90%;
         margin: 0 auto;
-        height: 60px;
+        height: 84px;
         border-radius: 10px;
         background: linear-gradient(to right,#672a2f, #20416e);
         margin-bottom: 4px;
@@ -64,13 +65,19 @@
         text-align: center;
         box-shadow: 0 0 6px #fff inset;
         .home-name{
-          width: 10%;
-        }
-        .home-logo{
-          width: 10%;
+          width: 30%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction:  column;
+          img{
+            width: 40px;
+            height: 40px;
+          }
         }
         .home-odds{
           width: 10%;
+          position: relative;
           button{
             width: 60px;
             height: 36px;
@@ -84,19 +91,31 @@
               box-shadow: 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff;
             }
           }
+          .increase{
+            @include increase(-18px,36px);
+          }
+          .reduce{
+            @include reduce(30px,36px);
+          }
 
         }
         .handicap-name{
-          width: 40%;
+          width: 20%;
           text-align: center;
         }
         .guest-name{
-          width: 10%;
-        }
-        .guest-logo{
-          width: 10%;
+          width: 30%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction:  column;
+          img{
+            width: 40px;
+            height: 40px;
+          }
         }
         .guest-odds{
+          position: relative;
           width: 10%;
           button{
             width: 60px;
@@ -110,6 +129,12 @@
             &:hover {
               box-shadow: 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff, 0 0 8px #fff;
             }
+          }
+          .increase{
+            @include increase(-18px,36px);
+          }
+          .reduce{
+            @include reduce(30px,36px);
           }
         }
       }
@@ -178,4 +203,30 @@
       }
     }
   }
+}
+
+/*箭头动画*/
+@-webkit-keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
 }

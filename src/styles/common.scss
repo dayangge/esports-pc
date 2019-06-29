@@ -26,3 +26,26 @@ $bg-pubg: linear-gradient(to right, #6b562b, #4a3e24);
   border-radius: 10%;
 }
 
+@mixin increase($top: -22px,$left: 18px) {
+  top: $top;
+  left: $left;
+  color: #FF1E1E;
+  font-size: 16px;
+  opacity: 0;
+  -webkit-animation: flash 1s linear 6 alternate;
+  animation: flash 1s linear 6 alternate;
+  position: absolute;
+}
+
+@mixin reduce($top: 22px,$left: 18px) {
+  top: $top;
+  left: $left;
+  color: #27ff33;
+  font-size: 16px;
+  opacity: 0;
+  -webkit-animation: flash 1s linear 6 alternate;
+  animation: flash 1s linear 6 alternate;
+  position: absolute;
+}
+
+

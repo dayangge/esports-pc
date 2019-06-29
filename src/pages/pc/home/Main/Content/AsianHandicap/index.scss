@@ -81,46 +81,42 @@
         display: block;
         text-align: center;
         width: 50px;
-        font-size: 18px;
+        font-size: 16px;
         vertical-align: middle;
         font-weight: bold;
       }
       .home-player {
-         width: 265px;
+         width: 285px;
          text-align: center;
          display: inline-block;
          .player-name {
            text-align: center;
-           width: 100px;
+           width: 120px;
            vertical-align: middle;
            display: inline-block;
-           overflow: hidden;
-           white-space: nowrap;
-           text-overflow: ellipsis;
            font-size: 16px;
            font-weight: 400;
-           margin-right: 5px;
+           @include textOverflow;
          }
          .player-img {
            width: 40px;
            height: 40px;
            border-radius: 50%;
            vertical-align: middle;
-           margin-right: 30px;
+           margin-right: 20px;
          }
          .bet {
-           color: #fff;
-           background: #ff7800;
+           color: #0F1A22;
+           background: #fb9133;
            position: relative;
+           right: -10px;
            width: 52px;
-           height: 30px;
-           line-height: 30px;
-           font-size: 15px;
-           font-weight: 700;
+           height: 28px;
+           line-height: 28px;
+           font-size: 13px;
            display: inline-block;
            vertical-align: middle;
            cursor: pointer;
-           margin-right: 5px;
            text-align: center;
            box-shadow: 0 0 0 #fff;
            transition: all .2s;
@@ -155,41 +151,37 @@
 
        }
       .guest-player {
-        width: 265px;
+        width: 285px;
         text-align: center;
         display: inline-block;
         .player-name {
           text-align: center;
-          width: 100px;
+          width: 120px;
           vertical-align: middle;
           display: inline-block;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
           font-size: 16px;
           font-weight: 400;
-          margin-right: 5px;
+          @include textOverflow;
         }
         .player-img {
           width: 40px;
           height: 40px;
           border-radius: 50%;
           vertical-align: middle;
-          margin-left: 30px;
+          margin-left: 20px;
         }
         .bet {
-          color: #fff;
-          background: #ff7800;
+          color: #0F1A22;
+          background: #fb9133;
           position: relative;
+          right: 10px;
           width: 52px;
-          height: 30px;
-          line-height: 30px;
-          font-size: 15px;
-          font-weight: 700;
+          height: 28px;
+          line-height: 28px;
+          font-size: 13px;
           display: inline-block;
           vertical-align: middle;
           cursor: pointer;
-          margin-right: 5px;
           text-align: center;
           box-shadow: 0 0 0 #fff;
           transition: all .2s;
