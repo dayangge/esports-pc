@@ -18,11 +18,7 @@
     color: #fff;
     display: block;
     position: relative;
-    height: 60px;
     margin-bottom: 4px;
-    &-lol{
-      background: $bg-lol;
-    }
     .match-box{
       border-bottom-color: transparent;
       box-sizing: border-box;
@@ -38,18 +34,6 @@
           vertical-align: middle;
           margin-right: 5px;
           margin-left: 5px;
-        }
-        .live{
-          width: 35px;
-          height: 35px;
-          display: inline-block;
-          cursor: pointer;
-          .liveicon{
-            color: #6c7995;
-            font-size: 35px;
-            vertical-align: middle;
-            cursor: pointer;
-          }
         }
         .info{
           margin-left: 5px;
@@ -102,25 +86,21 @@
             margin-right: 10px;
           }
           .bet{
-            color: #fff;
-            background: #ff7800;
+            color: #292929;
+            background-image: url("../../../../../../assets/saiguo-bifen.png");
             position: relative;
-            width: 52px;
-            height: 30px;
-            line-height: 30px;
-            font-size: 15px;
+            width: 48px;
+            height: 48px;
+            line-height: 38px;
+            font-size: 16px;
             font-weight: 700;
             display: inline-block;
             vertical-align: middle;
             border-radius: 3px;
-            cursor: pointer;
             margin-right: 5px;
             text-align: center;
             box-shadow: 0 0 0 #fff;
             transition: all .2s;
-            &:hover{
-              box-shadow: 0 0 8px #fff,0 0 8px #fff,0 0 8px #fff,0 0 8px #fff,0 0 8px #fff,0 0 8px #fff;
-            }
             .increase{
               top: -22px;
               left: 18px;
@@ -164,19 +144,17 @@
         .btn-guess{
           top: 20px;
           right: 70px;
-          width: 38px;
+          width: 24px;
+          height: 24px;
           font-weight: 700;
-          border-radius: 5px;
+          border-radius: 50%;
           transition: all .5s;
           cursor: pointer;
           background: transparent;
           position: absolute;
-          height: 28px;
           color: white;
           border: 1px solid #fff;
-          font-size: 14px;
           text-align: center;
-          line-height: 28px;
         }
         .live-icon{
           top: 8px;
@@ -369,4 +347,36 @@
       }
     }
   }
+}
+
+
+.match-item-lol {
+  height: $resultHeight;
+  background: $bg-lol;
+
+}
+.match-item-dota2 {
+  height: $resultHeight;
+  background: $bg-dota2;
+
+}
+.match-item-csgo {
+  height: $resultHeight;
+  background: $bg-csgo;
+
+}
+.match-item-pubg {
+  height: $resultHeight;
+  background: $bg-pubg;
+
+}
+.match-item-gok {
+  height: $resultHeight;
+  background: $bg-gok;
+
+}
+.match-item-ow {
+  height: $resultHeight;
+  background: $bg-ow;
+
 }

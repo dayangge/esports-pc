@@ -1,15 +1,17 @@
+
 export default {
-  namespace: 'showMatchHandicapInfo',
+  namespace: 'handicapDB',
 
   state: {
-    isShowMatchID : -1
+    handicapDB: {
+    },
   },
 
   effects: {
-    *changeMatchHandicapIndex({payload}, { call, put }) {
+    *saveHandicapData({payload}, { call, put }) {
       yield put({
         type: 'save',
-        payload,
+        payload: payload,
       });
     },
   },
@@ -18,8 +20,9 @@ export default {
     save(state, { payload }) {
       return {
         ...state,
-        isShowMatchID: payload,
+        handicapDB: payload,
       };
     },
   },
+
 };

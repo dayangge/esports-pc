@@ -18,7 +18,7 @@ export default {
   effects: {
     *fetchMatchResult({payload}, { call, put, select }) {
       let data = yield call(matchResult, payload);
-      data.list = normalizeData(data.list, 'ID');
+      data.list = normalizeData(data.list, 'match_id');
       yield put({
         type: 'save',
         payload: data,

@@ -12,7 +12,7 @@ import styles from './index.scss';
 class BettingSection extends PureComponent {
   state = {
     isTabs: 'bet',
-    slideIn: false
+    slideIn: true
   };
 
   changeBetSectionPos = () => {

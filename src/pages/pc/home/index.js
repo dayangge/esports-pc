@@ -16,7 +16,7 @@ import Mask from '../../../components/PCMask';
 class HomePage extends PureComponent {
 
   state = {
-    isLogin: false
+    isLogin: true
   };
 
   componentDidMount () {

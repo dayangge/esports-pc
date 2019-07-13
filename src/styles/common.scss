@@ -1,12 +1,44 @@
 /*比赛列表距离底部距离*/
 $matchLineBottom: 2px;
+$resultHeight: 60px;
+
+/*边框颜色*/
+$resultBorderColor: #365c77;
+$matchDetailBorderColor: #625e79;
+$betOderBorderColor1: #c4c5c0;
+$betOderBorderColor2: #625e79;
+
+/*背景颜色*/
+$buttonBgHome: #af0e14;
+$buttonBgGuest: #386eb6;
+$buttonBgHome2:#e2232a;
+$matchDetailBg1:#35435e;
+$matchDetailBg2:#21283a;
+
+$betOrderBg1:#f5ad35;
+$betOrderBg2:#4b4d64;
+$betOrderBg3:#c3c3c3;
+$betOrderBg4:#1b1a20;
+
+$recentBetBg1:#2a304a;
+$recentBetBg2:#4b4d64;
+
+
+/*游戏记录等弹窗*/
+$bgColor1:#35435e;
+$bgColor2:#21283a;
+$bgColor3:#f5ad35;
+
+/*字体颜色*/
+$fontColorWhite1: #fff;
+$fontColorWhite2: #fff;
+
 $bg-lol: linear-gradient(to right, #4858a6, #2a304a);
 $bg-dota2: linear-gradient(to right, #812f2b, #412526);
 $bg-csgo: linear-gradient(to right, #b17c29, #6e4300);
 $bg-ow: linear-gradient(to right, #555964, #2d2e30);
 $bg-gok: linear-gradient(to right, #915026, #632d11);
 $bg-pubg: linear-gradient(to right, #6b562b, #4a3e24);
-
 
 @mixin betBtn {
   display: flex;

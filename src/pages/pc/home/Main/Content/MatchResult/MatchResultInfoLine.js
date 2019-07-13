@@ -1,21 +1,41 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'dva';
 import { Icon, } from 'antd';
 import styles from './index.scss';
 import Fade from '../../../../../../components/fadeAninate';
 import moment from 'moment';
 import { gameBgColor } from 'esports-core/utils/util'
+import ResultDetail from './ResultDetail'
 
+@connect(({ matchResultDB }) => ({
+  matchResultDB,
+}))
 class MatchInfoLine extends PureComponent {
   state = {
     isShow: false
   };
 
-  showResultDetail = () => {
+  showResultDetail = (matchID) => {
+    const { dispatch} = this.props;
+    dispatch({
+      type: 'matchResultDB/fetchMatchResult',
+      payload: { match_id: matchID }
+    });
+    this.setState({
+      isShow: true
+    })
 
   };
 
+  closeResultDetail = () => {
+    this.setState({
+      isShow: false
+    })
+  };
+
   render() {
-    const { data} = this.props;
+    const { data, matchResultDB: {matchResultDB}} = this.props;
+    const { isShow } = this.state;
     return (
       <li className={styles['match-item']}>
         <div className={styles[`match-item-${gameBgColor[data.game_id]}`]}>
@@ -71,22 +91,20 @@ class MatchInfoLine extends PureComponent {
                     </div>
                   </div>
             <div className={styles['match-options']}>
-              <div className={styles['btn-guess']} onClick={this.showResultDetail}>+</div>
+              {
+                isShow ? <div className={styles['btn-guess']} onClick={this.closeResultDetail}>-</div> :
+                  <div className={styles['btn-guess']} onClick={() => this.showResultDetail(data.match_id)}>+</div>
+              }
+
             </div>
           </div>
         </div>
         <div>
-         {/*   {
-              isShowNum === eventLineIndex ? (
-                loading === undefined || loading ? (<div className={styles.loadingBox}><span className={styles.name}>正在加载中</span></div>): (
-                  <Fade in={!loading} >
-                    <BetDetail  matchHandicapData={matchHandicap}  />
-                  </Fade>
-                )
-              ) : ''
-
-            }*/}
+          {
+            isShow ? <ResultDetail data={matchResultDB.list} /> : ''
+          }
         </div>
+
       </li>
 
     );

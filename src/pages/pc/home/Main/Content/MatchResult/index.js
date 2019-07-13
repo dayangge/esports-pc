@@ -1,37 +1,58 @@
 import React, { PureComponent } from 'react';
 import styles from './index.scss';
 import ResultDetailInfoLine from './MatchResultInfoLine';
-import LoadingMask from '../../../../../../components/PCMask'
+import LoadingMask from '../../../../../../components/PCMask';
+import { connect } from 'dva';
+import MatchInfoLine from '../AsianHandicap/MatchInfoLine';
 
-export default class MatchResult extends PureComponent {
+@connect(({ gameAndMatchRequestParams}) => ({
+  gameAndMatchRequestParams
+}))
+class MatchResult extends PureComponent {
+
+  state = {
+    loading: false,
+    matchID: -1
+  };
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.gameAndMatchRequestParams.game_id !== prevState.matchID) {
+      return {matchID:nextProps.gameAndMatchRequestParams.game_id,
+        loading: true
+      }
+    }
+    if(nextProps.gameAndMatchRequestParams.game_id === prevState.matchID){
+      return {
+        loading: false
+      }
+    }
+  }
 
   render() {
-    const { resultData:{list},toggleGameLoading } = this.props;
+    const { resultData:{list}, toggleGameLoading } = this.props;
     const resultIDs = list.ids;
     const resultListInfo = list.list;
+    const {loading} = this.state;
+    const showLoadingMask = loading ?  toggleGameLoading : false;
 
     return (
       <div className={styles['match-wrapper']}>
-        {
-          toggleGameLoading && list.length > 0 ? (
-            <LoadingMask
-              bg='rgba(255,255,255,.2)'
-              loadingFontSize='20px'
-              loadingIconSize='40px'
-            />
-          ): ''
-        }
         <ul className={styles['match-list']}>
           {
-            resultIDs.length > 0 ?
-              (resultIDs.map((val) => (
+            showLoadingMask ?
+              (
+                <LoadingMask />
+              ):
+              (
+                resultIDs.map((val) => (
                   <ResultDetailInfoLine data={resultListInfo[val]} key={val}  />
                 ))
-              ):
-              (<LoadingMask />)
+              )
           }
         </ul>
       </div>
     );
   }
 }
+
+export default MatchResult;

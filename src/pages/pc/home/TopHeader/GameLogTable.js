@@ -101,19 +101,19 @@ class GameLogTable extends Component {
     } = this.props;
     return (
       <Form onSubmit={this.handleSearch} layout="inline">
-        <Row >
-          <Col md={5} sm={24}>
+        <Row className={styles.inputBox}>
+          <Col md={6} sm={24}>
             <FormItem label="订单编号">{
               getFieldDecorator('palt')(
-                <Input />
+                <Input className={styles.input1}/>
               )
             }
             </FormItem>
           </Col>
-          <Col md={5} sm={24}>
+          <Col md={6} sm={24}>
             <FormItem label="订单状态">{
               getFieldDecorator('pal')(
-                <Input />
+                <Input className={styles.input2} />
               )
             }
             </FormItem>
@@ -122,7 +122,7 @@ class GameLogTable extends Component {
             <FormItem label="选择时间">
               {
                 getFieldDecorator('time')(
-                  <RangePicker />
+                  <RangePicker className={styles.input3}/>
                 )
               }
             </FormItem>

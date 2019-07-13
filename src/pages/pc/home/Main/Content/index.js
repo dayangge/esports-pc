@@ -33,7 +33,7 @@ class Content extends PureComponent {
     const { game_id } =  gameAndMatchRequestParams;
     dispatch({
       type: 'matchList/fetchMatchList',
-      payload: { game_id, matchType: 1 }
+      payload: { game_id}
     });
   }
 
@@ -56,7 +56,7 @@ class Content extends PureComponent {
       });
       dispatch({
         type: 'matchList/fetchMatchList',
-        payload: { game_id, matchType: key }
+        payload: { game_id}
       });
     }
   };
@@ -85,7 +85,7 @@ class Content extends PureComponent {
               <MatchResult resultData={matchResult} toggleGameLoading={matchResultLoading} />
             </TabPane>
           </Tabs>
-          <div className={styles['search-box']}>
+          <div className={styles['search-box']} >
             <Icon className={styles.countClock}  type="clock-circle" />
             <span className={styles.countdown}>
               <CountDown time='60' onEnd={this.fetchMatchList} />

@@ -1,3 +1,4 @@
+@import "../../../../styles/common";
 .header{
   color: #fff;
   background: linear-gradient(to bottom, #1a1a20, #4b4d64);
@@ -47,12 +48,12 @@
   }
 }
 .searchButton{
-  color: #fff;
-  background-color: #ff7800;
+  color: #283045!important;
+  background-color: #f5ad35!important;
   border-color: #ff7800;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
-  height: 24px;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  height: 24px!important;
   margin-top: 8px;
 }
 
@@ -65,4 +66,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.inputBox{
+  padding: 0 10px;
+}
+.input1{
+  width: 120px!important;
+  background-color: $bgColor1!important;
+}
+.input2{
+  width: 120px!important;
+  background-color: $bgColor1!important;
+}
+.input3{
+  width: 210px!important;
+  background-color: $bgColor1!important;
+  border-radius:4px;
+  :global{
+    .ant-calendar-picker-icon{
+      color: white!important;
+    }
+  }
+
 }

@@ -25,7 +25,7 @@ class RuleDescription extends Component {
         destroyOnClose
         bodyStyle={{
           minHeight: '400px',
-          background: '#3e3e3e',
+          background: '#283045',
           boxShadow: '0 3px 10px #000',
           overflow: 'auto',
           color:'white',

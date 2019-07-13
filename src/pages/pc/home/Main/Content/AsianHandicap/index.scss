@@ -15,6 +15,17 @@
 .match-list {
   height: 80vh;
   background: #000;
+  .noData-box{
+    color: #fff;
+    position: relative;
+    border-bottom-color: transparent;
+    box-sizing: border-box;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .match-box {
     color: #fff;
     display: block;
@@ -24,15 +35,17 @@
     height: 60px;
     width: 100%;
     .game-info {
-      margin-top: 5px;
-      display: inline-block;
       color: #fff;
+      height: 60px;
+      display: flex;
+      align-items: center;
+
       .game-logo {
         width: 35px;
         height: 35px;
-        vertical-align: middle;
         margin-right: 5px;
         margin-left: 5px;
+
       }
       .live {
         width: 35px;
@@ -47,22 +60,20 @@
         }
       }
       .info {
-        margin-left: 5px;
+        margin-left: 10px;
         display: inline-block;
         font-size: 12px;
         vertical-align: middle;
         .time {
           color: #ff7800;
+          line-height: 20px;
         }
         .name {
           display: block;
-          line-height: 16px;
-        }
-        .team {
-          width: 200px;
-          display: block;
-          line-height: 16px;
-          @include textOverflow
+          line-height: 20px;
+          .bo{
+            margin-left: 4px;
+          }
         }
       }
 
@@ -106,8 +117,8 @@
            margin-right: 20px;
          }
          .bet {
-           color: #0F1A22;
-           background: #fb9133;
+           color: $fontColorWhite1;
+           background: $buttonBgHome;
            position: relative;
            right: -10px;
            width: 52px;
@@ -171,8 +182,8 @@
           margin-left: 20px;
         }
         .bet {
-          color: #0F1A22;
-          background: #fb9133;
+          color: $fontColorWhite1;
+          background: $buttonBgHome;
           position: relative;
           right: 10px;
           width: 52px;
@@ -256,7 +267,7 @@
 }
 .btn-guess-dota2{
   @include betBtn;
-  background-color: #4376df;
+  background-color: #AF4039;
 }
 .btn-guess-csgo{
   @include betBtn;

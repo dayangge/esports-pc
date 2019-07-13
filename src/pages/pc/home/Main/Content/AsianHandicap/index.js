@@ -29,7 +29,7 @@ class AsianHandicap extends PureComponent {
   }
 
   render() {
-    const { RoundData,toggleGameLoading,gameAndMatchRequestParams: {game_id} } = this.props;
+    const { RoundData,toggleGameLoading, gameAndMatchRequestParams: {game_id} } = this.props;
     const {list,ids} = RoundData;
     const {loading} = this.state;
     const showLoadingMask = loading ?  toggleGameLoading : false;
@@ -41,8 +41,10 @@ class AsianHandicap extends PureComponent {
              (
                <LoadingMask />
              ):
-              (ids.map((val,index) => (
-                  <MatchInfoLine data={list[val]} key={val} eventLineIndex={index} />
+              (
+                ids.length === 0 ? <div className={styles['noData-box']}>暂无数据</div> :
+                ids.map((val,index) => (
+                  <MatchInfoLine data={list[val]} key={val} eventLineIndex={index} gameID={game_id} />
                 ))
               )
           }

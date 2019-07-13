@@ -1,0 +1,48 @@
+@import "../../../../../../styles/common";
+.resultBox{
+  background: $matchDetailBg2;
+  width: 100%;
+  vertical-align: top;
+  overflow-y: auto;
+  font-size: 14px;
+  color: white;
+  .round{
+    width: 100%;
+    .item{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .round-name{
+        width: 100%;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+      }
+      .detail-item{
+        border-bottom: 1px solid $matchDetailBorderColor;
+        height: 36px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        &:nth-child(1){
+          border-top: 1px solid $matchDetailBorderColor;
+        }
+        &:nth-child(odd){
+          background-color: $matchDetailBg1;
+        }
+        .name{
+          width: 50%;
+          line-height: 36px;
+        }
+        .result{
+          border-left: 1px solid $matchDetailBorderColor;
+          line-height: 36px;
+          width: 50%;
+        }
+      }
+    }
+  }
+}
