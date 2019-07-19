@@ -1,6 +1,7 @@
 import React, { PureComponent,Fragment } from 'react';
 import { connect } from 'dva';
 import withRouter from 'umi/withRouter';
+import moment from 'moment';
 import jwtDecode from 'jwt-decode'
 import SessionStorage from 'esports-core/utils/sessionStorage';
 import TopHeader from './TopHeader/index';
@@ -14,36 +15,58 @@ import Mask from '../../../components/PCMask';
   login
 }))
 class HomePage extends PureComponent {
-
   state = {
     isLogin: true
+  };
+  timer = null;
+
+  setRefreshToken = () => {
+    const expire = SessionStorage.get('expire');
+    const expireTimestamp = moment(expire).valueOf();
+    const now = moment().valueOf();
+    const setTime = (expireTimestamp - now + 1000 * 60 * 5) > 1000 * 60 *5 ? expireTimestamp - now + 1000 * 60 * 5 : 10000 ;
+    if(this.timer !== null) {
+      this.timer = setTimeout(this.refreshToken,
+        setTime)
+    }
+  };
+
+  refreshToken = () => {
+    const { dispatch, } = this.props;
+    const token = SessionStorage.get('token');
+    dispatch({
+      type: 'login/refreshToken',
+      payload: {token},
+      callback: (res) => {
+        SessionStorage.add('token',res.token);
+        SessionStorage.add('expire',res.expire);
+        this.setRefreshToken()
+      }
+    });
   };
 
   componentDidMount () {
     const { dispatch, location } = this.props;
-    let token = '';
     if(SessionStorage.get('token') !== undefined && SessionStorage.get('token') !== null  ){
-      token = SessionStorage.get('token');
+      this.setRefreshToken();
       this.setState({
         isLogin: true
       })
     }else{
-      token = location.query.token;
+      const token = location.query.token;
       dispatch({
         type: 'login/login',
         payload: {token},
         callback: (res) => {
-          if(res.code === 200 ){
-            jwtDecode(res.token);
-            SessionStorage.add('token',res.token);
-            this.setState({
-              isLogin: true
-            })
-          }
+          SessionStorage.add('token',res.token);
+          SessionStorage.add('expire',res.expire);
+          this.setRefreshToken();
+          this.setState({
+             isLogin: true
+           })
         }
       });
     }
-
   }
 
   render() {

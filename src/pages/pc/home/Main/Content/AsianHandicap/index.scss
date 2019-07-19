@@ -39,13 +39,11 @@
       height: 60px;
       display: flex;
       align-items: center;
-
       .game-logo {
         width: 35px;
         height: 35px;
         margin-right: 5px;
         margin-left: 5px;
-
       }
       .live {
         width: 35px;
@@ -80,8 +78,8 @@
     }
     .vs {
       top: 10px;
-      left: 255px;
-      width: 620px;
+      left: 225px;
+      width: 650px;
       position: absolute;
       text-align: center;
       font-size: 14px;
@@ -97,12 +95,12 @@
         font-weight: bold;
       }
       .home-player {
-         width: 285px;
+         width: 305px;
          text-align: center;
          display: inline-block;
          .player-name {
            text-align: center;
-           width: 120px;
+           width: 150px;
            vertical-align: middle;
            display: inline-block;
            font-size: 16px;
@@ -115,6 +113,7 @@
            border-radius: 50%;
            vertical-align: middle;
            margin-right: 20px;
+           margin-left: 10px;
          }
          .bet {
            color: $fontColorWhite1;
@@ -162,12 +161,12 @@
 
        }
       .guest-player {
-        width: 285px;
+        width: 305px;
         text-align: center;
         display: inline-block;
         .player-name {
           text-align: center;
-          width: 120px;
+          width: 150px;
           vertical-align: middle;
           display: inline-block;
           font-size: 16px;
@@ -180,6 +179,7 @@
           border-radius: 50%;
           vertical-align: middle;
           margin-left: 20px;
+          margin-right: 10px;
         }
         .bet {
           color: $fontColorWhite1;

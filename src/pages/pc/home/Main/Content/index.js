@@ -72,14 +72,8 @@ class Content extends PureComponent {
       <div className={styles['aside-right']}>
         <div className={styles['match-container']}>
           <Tabs defaultActiveKey="1" onChange={this.callback}>
-            <TabPane tab="早盘/滚盘" key="1" className={styles['panel-content']}>
+            <TabPane tab="比赛盘" key="1" className={styles['panel-content']}>
               <AsianHandicap RoundData={matchList} toggleGameLoading={matchListLoading} />
-            </TabPane>
-            <TabPane tab="滚盘" key="2" className={styles['panel-content']}>
-              Content of Tab Pane 2
-            </TabPane>
-            <TabPane tab="特殊赛事" key="3" className={styles['panel-content']}>
-              Content of Tab Pane 3
             </TabPane>
             <TabPane tab="赛果" key="4" className={styles['panel-content']}>
               <MatchResult resultData={matchResult} toggleGameLoading={matchResultLoading} />
@@ -90,7 +84,7 @@ class Content extends PureComponent {
             <span className={styles.countdown}>
               <CountDown time='60' onEnd={this.fetchMatchList} />
               s</span>
-            <Search className={styles['search-input']} onSearch={value => console.log(value)} />
+           {/* <Search className={styles['search-input']} onSearch={value => console.log(value)} />*/}
           </div>
         </div>
       </div>

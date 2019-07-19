@@ -1,4 +1,5 @@
 @import "../../../../../../../styles/common";
+@import "../../../../../../../styles/utils";
 .bet{
   background: #273044;
   width: 100%;
@@ -25,6 +26,7 @@
         position: absolute;
         top: 32px;
         left: 16px;
+        @include textOverflow;
       }
       .gameLogo{
         width: 40px;
@@ -42,6 +44,7 @@
         position: absolute;
         top: 32px;
         right: 16px;
+        @include textOverflow;
       }
     }
   }
@@ -77,7 +80,6 @@
             }
           }
       }
-
     }
   }
   .list{
@@ -137,7 +139,6 @@
           .reduce{
             @include reduce(30px,36px);
           }
-
         }
         .handicap-name{
           width: 20%;
@@ -234,7 +235,8 @@
               position: relative;
             }
             .pankou-name{
-
+              text-align: center;
+              @include textOverflow;
             }
             .pankou-result{
               font-weight: 700;
@@ -244,9 +246,6 @@
               }
             }
           }
-
-
-
         }
       }
     }

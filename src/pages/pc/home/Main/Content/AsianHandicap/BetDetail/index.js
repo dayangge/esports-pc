@@ -6,10 +6,12 @@ import { getStorage } from 'esports-core/utils/localStoragePloyfill';
 import Slide from '../../../../../../../components/slideAnimate/index';
 import { Icon } from 'antd';
 
-@connect(({ oddsList,matchDB, gameDB, loading }) => ({
+@connect(({ oddsList, betShopCart,changeBetSectionStatus, matchDB, gameDB, loading }) => ({
   oddsList,
   matchDB,
   gameDB,
+  betShopCart,
+  changeBetSectionStatus,
   Loading: loading.models.matchHandicap,
 }))
 class betDetail extends PureComponent {
@@ -32,6 +34,27 @@ class betDetail extends PureComponent {
   renderMoreRound() {
 
   }
+
+  addMainHandicapToShopCart = (matchID, handicapID, handicapItemID) => {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'changeBetSectionStatus/changeStatus',
+      payload: true
+    });
+    const shopCart = {
+      id: handicapID,
+      matchID,
+      handicapID,
+      handicapItemID,
+      odds:0,
+      amount:0,
+      err:0
+    };
+    dispatch({
+      type: 'betShopCart/addBetShopCart',
+      payload: shopCart
+    });
+  };
 
   render() {
     const { isShowNum } = this.state;
@@ -76,11 +99,13 @@ class betDetail extends PureComponent {
                         >
                           {
                             list[val.id].map((item) => (
+                              item.handicap_items &&
                               <li className={styles['allRound-box']} key={ item.handicap_id } >
                                 <div className={styles.allRound}>
                                 <div className={styles['home-name']}>
                                   <img  src={matchDB[matchID].host_player.logo} alt='logo'/>
-                                  {item.handicap_items[0].content}{item.handicap_items[1].offset ? `(${item.handicap_items[1].offset})`: ''}
+
+                                  {item.handicap_items[0].content}{item.handicap_items[0].offset ? `(${item.handicap_items[0].offset})`: ''}
                                 </div>
                                   <div className={styles['home-odds']}>
                                     {
@@ -92,7 +117,8 @@ class betDetail extends PureComponent {
                                       </span>
                                       ) : ''
                                     }
-                                    <button>
+                                    <button
+                                      onClick={() =>this.addMainHandicapToShopCart(matchID, item.handicap_id,item.handicap_items[0].handicap_item_id)}>
                                       {oddsList[item.handicap_items[0].handicap_item_id].odds}
                                     </button>
                                     {
@@ -110,7 +136,7 @@ class betDetail extends PureComponent {
                                   </div>
                                   <div className={styles['guest-odds']} >
                                     {
-                                      oddsList[item.handicap_items[1].handicap_item_id] &&
+                                      item.handicap_items[1] && oddsList[item.handicap_items[1].handicap_item_id] &&
                                       oddsList[item.handicap_items[1].handicap_item_id].increase &&
                                       oddsList[item.handicap_items[1].handicap_item_id].increase === 1 ? (
                                         <span className={styles.increase}>
@@ -118,11 +144,13 @@ class betDetail extends PureComponent {
                                       </span>
                                       ) : ''
                                     }
-                                    <button>
-                                      {oddsList[item.handicap_items[1].handicap_item_id].odds}
+                                    <button
+                                      onClick={() =>this.addMainHandicapToShopCart(matchID, item.handicap_id,item.handicap_items[1].handicap_item_id)}
+                                    >
+                                      {item.handicap_items[1] && oddsList[item.handicap_items[1].handicap_item_id].odds}
                                     </button>
                                     {
-                                      oddsList[item.handicap_items[1].handicap_item_id] &&
+                                      item.handicap_items[1] && oddsList[item.handicap_items[1].handicap_item_id] &&
                                       oddsList[item.handicap_items[1].handicap_item_id].increase &&
                                       oddsList[item.handicap_items[1].handicap_item_id].increase === -1 ? (
                                         <span className={styles.reduce}>
@@ -133,10 +161,9 @@ class betDetail extends PureComponent {
                                   </div>
                                   <div className={styles['guest-name']}>
                                     <img  src={matchDB[matchID].guest_player.logo} alt='logo'/>
-                                    {item.handicap_items[1].content}{item.handicap_items[1].offset ? `(${item.handicap_items[1].offset})`: ''}
+                                    {item.handicap_items[1] && item.handicap_items[1].content}{item.handicap_items[1] && item.handicap_items[1].offset ? `(${item.handicap_items[1].offset})`: ''}
                                   </div>
                                 </div>
-
                               </li>
                             ))
                           }
@@ -148,6 +175,7 @@ class betDetail extends PureComponent {
                       >
                       {
                         list[val.id].map((item) => (
+                          item.handicap_items &&
                           <li className={styles.item} key={ item.handicap_id } >
                             <div className={styles['table-item']}>
                                 <div className={styles['bet-name']}>
@@ -157,10 +185,11 @@ class betDetail extends PureComponent {
                                   {
                                     item.handicap_items.map((v) => (
                                       <div className={styles['pankou-row']} key={v.handicap_item_id}>
-                                          <span className={styles['pankou-name'] + 'txt-ellipsis'}>
+                                          <span className={styles['pankou-name']}>
                                            {v.content}{v.offset ? `(${v.offset})`: ''}
                                           </span>
-                                        <span className={styles['pankou-result']} >
+                                          <span className={styles['pankou-result']}
+                                                onClick={() =>this.addMainHandicapToShopCart(matchID, item.handicap_id,v.handicap_item_id)}>
                                           {oddsList[v.handicap_item_id] ? oddsList[v.handicap_item_id].odds : ''}
                                           </span>
                                       </div>
@@ -172,7 +201,7 @@ class betDetail extends PureComponent {
                         ))
                       }
                     </ul>
-                      )
+                    )
                   ))
                 }
               </div>

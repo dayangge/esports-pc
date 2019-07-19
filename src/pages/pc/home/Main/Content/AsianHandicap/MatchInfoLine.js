@@ -90,8 +90,10 @@ class MatchInfoLine extends PureComponent {
                 src={data.host_player.logo}
                 className={styles['player-img']}
               />
-              <div className={styles.bet}>
-                { data.main_handicap && data.main_handicap.handicap_items[0]&&
+              <div className={styles.bet} onClick={() => this.showBetDetail( data.match_id)}>
+                { data.main_handicap
+                && data.main_handicap.handicap_items
+                && data.main_handicap.handicap_items[0]&&
                 data.main_handicap.handicap_items[0].handicap_item_id
                 && oddsList[data.main_handicap.handicap_items[0].handicap_item_id]
                   ? oddsList[data.main_handicap.handicap_items[0].handicap_item_id].odds.toString().substring(0,4) :''}
@@ -113,8 +115,10 @@ class MatchInfoLine extends PureComponent {
             </div>
             <span className={styles['txt-vs']}>VS</span>
             <div className={styles['guest-player']}>
-                <span className={styles.bet}>
-                  {data.main_handicap &&data.main_handicap.handicap_items[1]&&
+                <span className={styles.bet} onClick={() => this.showBetDetail( data.match_id)}>
+                  {data.main_handicap
+                  && data.main_handicap.handicap_items
+                  &&data.main_handicap.handicap_items[1]&&
                   data.main_handicap.handicap_items[1].handicap_item_id
                   && oddsList[data.main_handicap.handicap_items[1].handicap_item_id]
                     ? oddsList[data.main_handicap.handicap_items[1].handicap_item_id].odds.toString().substring(0,4) :''}

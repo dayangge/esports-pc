@@ -325,6 +325,103 @@ td{
   transition: all 500ms;
 }
 
+/*划入动画*/
+@-webkit-keyframes SlideDownIn {
+  0% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}
+@keyframes SlideDownIn {
+  0% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes SlideDownOut {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 0;
+  }
+}
+@keyframes SlideDownOut {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 0;
+  }
+}
+
+
+/*覆盖antd modal样式*/
+.ant-modal-confirm-body .ant-modal-confirm-title{
+  color: white!important;
+}
+.ant-modal-confirm-body .ant-modal-confirm-content{
+  color: white!important;
+}
+.ant-modal-confirm-info .ant-modal-confirm-body > .anticon{
+  color: white!important;
+}
+.ant-modal-content{
+  background-color: #35435e!important;
+}
+.ant-btn-primary{
+  color: #273044;
+  background-color: #e8a837;
+  border-color: #e8a837;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+.ant-btn-primary:hover, .ant-btn-primary:focus{
+  color: #273044;
+  background-color: #e8a837;
+  border-color: #e8a837;
+}
+.ant-btn-primary:active, .ant-btn-primary.active{
+  color: #273044;
+  background-color: #e8a837;
+  border-color: #e8a837;
+}
 /*覆盖antd的Tabs-Nav样式*/
 .ant-tabs-top-bar{
   width: 1200px;

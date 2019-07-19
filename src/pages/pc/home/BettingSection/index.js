@@ -6,8 +6,9 @@ import RecentBets from './RecentBets';
 import Fade from '../../../../components/fadeAninate'
 
 import styles from './index.scss';
-@connect(({ showGameLog}) => ({
+@connect(({ showGameLog, changeBetSectionStatus}) => ({
   showGameLog,
+  changeBetSectionStatus
 }))
 class BettingSection extends PureComponent {
   state = {
@@ -15,11 +16,20 @@ class BettingSection extends PureComponent {
     slideIn: true
   };
 
-  changeBetSectionPos = () => {
-    const { slideIn } = this.state;
-    this.setState({
-      slideIn: !slideIn
-    })
+  openBetSectionPos = () => {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'changeBetSectionStatus/changeStatus',
+      payload: true
+    });
+  };
+
+  closeBetSectionPos = () => {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'changeBetSectionStatus/changeStatus',
+      payload: false
+    });
   };
 
   toggleTabs= (tab) => {
@@ -37,12 +47,20 @@ class BettingSection extends PureComponent {
   };
 
   render() {
-    const { slideIn,isTabs } = this.state;
+    const { changeBetSectionStatus : {betSectionStatus} } = this.props;
+    const { isTabs } = this.state;
     return (
-      <div className={styles.betting} style={slideIn ? { transform: 'translateX(0)'}:{transform: 'translateX(100%)'}}>
-        <div className={styles.arrow} onClick={this.changeBetSectionPos}>
-         <Icon className={styles.iconfont} type="right" />
-        </div>
+      <div className={styles.betting} style={betSectionStatus ? { transform: 'translateX(0)'}:{transform: 'translateX(100%)'}}>
+        {
+          betSectionStatus ? (<div className={styles.arrow} onClick={this.closeBetSectionPos}>
+            <Icon className={styles.iconfont} type="right" />
+          </div>) :(<div className={styles.arrow} onClick={this.openBetSectionPos}>
+            <Icon className={styles.iconfont} type="left" />
+          </div>)
+        }
+
+
+
         <div className={styles.header}>
           <span>竞猜单</span>
           {

@@ -23,6 +23,7 @@ export default {
   effects: {
     *fetchMatchList({ payload }, { call, put, select }) {
       let data = yield call( matchList, payload );
+      data  = data.slice(0, 10);
       if(data === undefined){return}
       data = normalizeData(data, 'match_id');
       const matchDB = yield select( state => state.matchDB.matchDB);

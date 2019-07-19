@@ -6,7 +6,7 @@
   transform: translateX(0);
   right: 0;
   position: fixed;
-  width: 390px;
+  width: 360px;
   z-index: 11;
   box-shadow: 0 0 15px #000;
   transition: all .5s;
@@ -69,21 +69,24 @@
   .container{
     height: 66vh;
     position: relative;
-    overflow: hidden !important;
     overflow-anchor: none;
     -ms-overflow-style: none;
     touch-action: auto;
     flex-direction: column;
     display: flex;
     font-size: 14px;
+    overflow-y:scroll ;
+    &::-webkit-scrollbar {
+      width: 0 !important
+    }
     /*投注单列表样式*/
     .bet-box{
       width: 100%;
       flex-direction: column;
       display: flex;
-      padding: 6px;
       color: #0F1A22;
       margin-top: 10px;
+      padding: 0 6px;
       .bet-list{
         width: 100%;
         flex-direction: column;
@@ -91,6 +94,17 @@
         justify-content: center;
         align-items: center;
         font-size: 12px;
+        .bet-none{
+          width: 100%;
+          height: 80px;
+          flex-direction: column;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 4px;
+          color: white;
+          font-size: 14px;
+        }
         .bet-item{
           width: 100%;
           flex-direction: column;
@@ -98,6 +112,9 @@
           justify-content: center;
           align-items: center;
           margin-bottom: 4px;
+          margin-left: 4px;
+          margin-right: 4px;
+          animation: SlideUpIn .2s linear 1;
           .bet-item-header{
             width: 100%;
             flex-direction: row;
@@ -107,7 +124,7 @@
             background-color: #f7f7f7;
             padding: 8px 4px;
             margin-bottom: 1px;
-            border-radius: 4px;
+            border-radius: 2px;
             .icon{
               width:16px;
               height: 16px;
@@ -124,7 +141,6 @@
             align-items: center;
             background-color: #f7f7f7;
             color: #0F1A22;
-            border-radius: 4px;
             .handicapInfo{
               width: 100%;
               flex-direction: row;
@@ -144,6 +160,12 @@
                 text-align: center;
               }
             }
+            .errInfo {
+              width: 100%;
+              color: red;
+              padding: 1px 3px;
+              margin-left: 14px;
+            }
             .winInfo{
               width: 100%;
               flex-direction: row;
@@ -152,10 +174,10 @@
               align-items: center;
               padding: 5px 3px;
               .odds{
-                width: 52px;
+                width: 62px;
                 height: 28px;
-                line-height: 28px;
-                font-size: 14px;
+                line-height: 29px;
+                font-size: 13px;
                 text-align: center;
                 display: inline-block;
                 border-radius: 5px;
@@ -167,13 +189,35 @@
 
               }
               .x{
-
+                width: 10px;
+                text-align: center;
               }
               .bet-select{
                 width: 107px;
                 height: 28px;
-                display: inline-block;
                 position: relative;
+                .bet-select-arrow{
+                  position: absolute;
+                  top: 0;
+                  right: 3px;
+                  background: transparent;
+                  width: 20px;
+                  height: 28px;
+                  padding-top: 6px;
+                  z-index: 2;
+                  text-align: center;
+                  .icon{
+                    transition: all .4s;
+                    font-size: 14px;
+                    color: #7D7471;
+                    transform: rotate(0);
+                    transform-origin: 50% 50%;
+                    &.active{
+                      transform: rotate(180deg);
+                      transform-origin: 50% 50%;
+                    }
+                  }
+                }
                 .bet-select-input{
                   text-indent: 3px;
                   outline: none;
@@ -184,19 +228,52 @@
                   width: 100%;
                   height: 100%;
                   box-sizing: border-box;
-                  position: relative;
+                  position: absolute;
+                }
+                .option-box{
+                  z-index: 6;
+                  position: absolute;
+                  width: 107px;
+                  top: 28px;
+                  margin-bottom: 0;
+                  padding-left: 0;
+                  overflow: auto;
+                  list-style: none;
+                  outline: none;
+                  background-color: #fff;
+                  border-radius: 4px;
+                  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                  animation: SlideUpIn .2s linear 1;
+                  .option{
+                    display: block;
+                    padding: 2px 12px;
+                    overflow: hidden;
+                    color: rgba(0,0,0,0.65);
+                    font-weight: normal;
+                    line-height: 22px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    cursor: pointer;
+                    -webkit-transition: background .3s ease;
+                    transition: background .3s ease;
+                    &:hover{
+                      background-color: #e6f7ff;
+                    }
+                  }
                 }
               }
               .equal{
-
+                width: 10px;
+                text-align: center;
               }
               .money{
-
+                width: 70px;
+                text-align: center;
               }
               .del{
-
+                width: 10px;
+                text-align: center;
               }
-
             }
           }
         }
@@ -204,7 +281,6 @@
     }
     /*投注单按钮样式*/
     .bet-total{
-      margin: 10px 1px 1px;
       width: 100%;
       color: #fff;
       display: flex;
@@ -220,11 +296,11 @@
         display: flex;
         flex-direction: row;
         .left{
-          margin-left: 10%;
+          text-align: center;
           width: 50%;
         }
         .right{
-          margin-left: 10%;
+          text-align: center;
           width: 50%;
         }
       }
@@ -248,8 +324,7 @@
           margin-top: 10px;
           display: block;
           color: #c3c3c3;
-      }
-
+        }
       }
     }
     /*近期投注样式*/
@@ -350,5 +425,135 @@
         background: $betOrderBg2
       }
     }
+  }
+}
+
+/*silde划入动画*/
+@-webkit-keyframes SlideUpIn {
+  0% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+@keyframes SlideUpIn {
+  0% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes SlideUpOut {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
+}
+@keyframes SlideUpOut {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes SlideDownIn {
+  0% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}
+@keyframes SlideDownIn {
+  0% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes SlideDownOut {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 0;
+  }
+}
+@keyframes SlideDownOut {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 0;
   }
 }

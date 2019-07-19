@@ -1,4 +1,4 @@
-import { loginApp,login1 } from 'esports-core/services/api';
+import { loginApp,loginToRefreshToken } from 'esports-core/services/api';
 
 export default {
   namespace: 'login',
@@ -6,7 +6,6 @@ export default {
   state: {
     isLogin:false,
     token: {
-
     },
   },
 
@@ -19,12 +18,8 @@ export default {
       });
       if (callback) callback(data);
     },
-    *login1({ payload, callback }, { call, put }) {
-      let data = yield call(login1, payload);
-      yield put({
-        type: 'save',
-        payload: data,
-      });
+    *refreshToken({ payload, callback }, { call, put }) {
+      let data = yield call(loginToRefreshToken, payload);
       if (callback) callback(data);
     },
     *changeLoginStatus({ payload }, { call, put }) {
